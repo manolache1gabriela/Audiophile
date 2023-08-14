@@ -1,0 +1,5 @@
+@import 'base/reset', 'base/typography', 'components/buttons';
+
+a {
+    @include links;
+}

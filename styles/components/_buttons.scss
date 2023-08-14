@@ -1,0 +1,55 @@
+@import '../abstracts/variables', '../abstracts/mixins', '../base/typography', '../abstracts/mixins';
+
+.button-1 {
+    @include buttons;
+    background-color: $colorOrangeBright;
+
+    &:hover {
+        background-color: $colorOrangeFaded;
+    }
+
+    p {
+        @include subTitle;
+        color: $colorWhiteBright;
+    }
+}
+
+.button-2 {
+    @include buttons;
+    background-color: $transparent;
+    border: $buttonBorderSize $buttonBorderType $colorBlackIntense;
+
+    p {
+        @include subTitle;
+        color: $colorBlackIntense;
+    }
+
+    &:hover {
+        background-color: $colorBlackIntense;
+
+        p {
+            color: $colorWhiteBright;
+        }
+    }
+
+}
+
+
+.button-3 {
+    display: $displayFlex;
+    gap: $gapButton-3;
+    color: $colorBlackIntense;
+    width: max-content;
+
+}
+
+.products {
+    div {
+
+        &:hover {
+            @include products;
+        }
+    }
+
+    width: max-content;
+}

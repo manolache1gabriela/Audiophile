@@ -1,0 +1,18 @@
+@use 'variables';
+
+@mixin buttons {
+    width: $buttonsWidth;
+    height: $buttonsHeight;
+    flex-shrink: $flexShrink;
+    display: $displayFlex;
+    justify-content: $justifyContent;
+    align-content: $alignContent;
+}
+
+@mixin products {
+    .button-3 {
+        p {
+            color: red;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+// colors variables
+
+$colorOrangeBright : #D87D4A;
+$colorOrangeFaded : #FBAF85;
+$colorBlackFaded : #101010;
+$colorBlackIntense : #000;
+$colorWhiteBright : #FFF;
+$colorWhiteFaded : #FAFAFA;
+$colorWhiteGray : #F1F1F1;
+$transparent: transparent;
+
+// sizing variables
+
+$boxSizing : border-box;
+$boxSizing : content-box;
+
+// --buttons
+
+$buttonsWidth : 10rem;
+$buttonsHeight : 3rem;
+$buttonBorderSize: 1px;
+$buttonBorderType: solid;
+$buttonShopWidth : 3.58rem;
+$buttonShopHeight : 1.13rem;
+
+// display
+
+$displayFlex : flex;
+$displayGrid : grid;
+$displayInLine : inline;
+$displayBlock : block;
+
+// display flex
+
+// $flexGrow : ;
+$flexShrink : 0;
+
+
+// background
+
+$bgRepeat : no-repeat;
+$bg-size : cover;
+
+// font family
+
+$fontFamily : Manrope,
+sans-serif;
+
+// text
+
+$textTransform: uppercase;
+
+// font size
+
+$H1Size: 3.5rem;
+$H2Size: 2.5rem;
+$H3Size: 2rem;
+$H4Size: 1.75rem;
+$H5Size: 1.5rem;
+$H6Size: 1.125rem;
+$overlineSize: 0.875rem;
+$subTitleSize: 0.825rem;
+$bodySize: 0.938rem;
+
+// font weight
+
+$fontWeightParagraph: 500;
+$fontWeightTitlesAndSubTitles: 700;
+$fontWeightOverline: 400;
+
+// line-height
+
+$lineHeightNormal: normal;
+$lineHeightH1: 3.625rem;
+$lineHeightH2: 2.75rem;
+$lineHeightH3: 2.25rem;
+$lineHeightSubTitle: 1.5625rem;
+$lineHeightParagraphs: $lineHeightSubTitle;
+
+// letter-spacing
+
+$letterSpacingH1: 0.125rem;
+$letterSpacingH2: 0.08931rem;
+$letterSpacingH3: 0.07144rem;
+$letterSpacingH4: $letterSpacingH1;
+$letterSpacingH5: 0.10713rem;
+$letterSpacingH6: 0.08038rem;
+$letterSpacingOverline: 0.625rem;
+$letterSpacingSubTitle: 0.05806rem;
+
+
+// text-decoration
+
+$textDecoration: none;
+
+
+// justify-content
+
+$justifyContent: center;
+
+// align-content
+
+$alignContent: center;
+
+// gap
+
+$gapButton-3: 0.83263rem;
