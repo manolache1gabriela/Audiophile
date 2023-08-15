@@ -4,9 +4,10 @@ body {
     font-family: $fontFamily;
 }
 
-@mixin links {
+a {
     text-decoration: $textDecoration;
 }
+
 
 @mixin h1 {
     color: $colorBlackIntense;

@@ -6,13 +6,13 @@
     flex-shrink: $flexShrink;
     display: $displayFlex;
     justify-content: $justifyContent;
-    align-content: $alignContent;
+    align-content: $alignItems;
 }
 
 @mixin products {
     .button-3 {
         p {
-            color: red;
+            color: $colorOrangeBright;
         }
     }
 }

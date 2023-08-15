@@ -1,5 +1,1 @@
-@import 'base/reset', 'base/typography', 'components/buttons';
-
-a {
-    @include links;
-}
+@import 'base/reset', 'base/typography', 'components/buttons', 'layout/header', 'pages/home';
