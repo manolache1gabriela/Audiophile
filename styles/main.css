@@ -186,10 +186,14 @@ a {
 
 .button-3 {
   display: flex;
+  align-items: center;
   gap: 0.83263rem;
   color: #000;
   width: -moz-max-content;
   width: max-content;
+}
+.button-3 p {
+  opacity: 0.5;
 }
 
 .products div:hover .button-3 p {
@@ -336,10 +340,14 @@ a {
 
 .button-3 {
   display: flex;
+  align-items: center;
   gap: 0.83263rem;
   color: #000;
   width: -moz-max-content;
   width: max-content;
+}
+.button-3 p {
+  opacity: 0.5;
 }
 
 .products div:hover .button-3 p {
@@ -404,4 +412,64 @@ a {
   width: 328px;
   margin: 0;
   opacity: 0.75;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 8rem 0;
+}
+.products .headphones-products {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.products .headphones-products img {
+  width: 50%;
+  position: absolute;
+  top: -50%;
+}
+.products .speakers-products {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.products .speakers-products img {
+  width: 50%;
+  position: absolute;
+  top: -40%;
+}
+.products .earphones-products {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.products .earphones-products img {
+  width: 50%;
+  position: absolute;
+  top: -35%;
+}
+.products .gray-div {
+  width: 20.4375rem;
+  height: 10.3125rem;
+  background-color: #F1F1F1;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+.products .gray-div .prod-type {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.08038rem;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 15px;
 }/*# sourceMappingURL=main.css.map */

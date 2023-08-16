@@ -53,3 +53,70 @@
     }
 
 }
+
+.products {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 8rem 0;
+
+    .headphones-products {
+        align-items: $alignItems;
+        display: $displayFlex;
+        flex-direction: column;
+        position: relative;
+
+        img {
+            width: 50%;
+            position: absolute;
+            top: -50%;
+        }
+
+
+
+    }
+
+    .speakers-products {
+        img {
+            width: 50%;
+            position: absolute;
+            top: -40%;
+        }
+
+        align-items: $alignItems;
+        display: $displayFlex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .earphones-products {
+        img {
+            width: 50%;
+            position: absolute;
+            top: -35%;
+        }
+
+        align-items: $alignItems;
+        display: $displayFlex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .gray-div {
+        width: 20.4375rem;
+        height: 10.3125rem;
+        background-color: $colorWhiteGray;
+        border-radius: 0.5rem;
+        display: $displayFlex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: $alignItems;
+
+        .prod-type {
+            @include h6;
+            margin: 0;
+            font-size: 15px;
+
+        }
+    }
+}

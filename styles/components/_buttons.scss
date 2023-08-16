@@ -37,9 +37,14 @@
 
 .button-3 {
     display: $displayFlex;
+    align-items: $alignItems;
     gap: $gapButton-3;
     color: $colorBlackIntense;
     width: max-content;
+
+    p {
+        opacity: 0.5;
+    }
 
 }
 
