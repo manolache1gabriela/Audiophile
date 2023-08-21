@@ -1,0 +1,55 @@
+@import '../layout/header', '../abstracts/variables', '../abstracts/mixins', '../base/typography', '../components/buttons';
+
+
+.about {
+    width: 100%;
+    height: 100%;
+    display: $displayFlex;
+    flex-direction: column;
+    align-items: $alignItems-center;
+    justify-content: $justifyContent;
+    gap: 1.5rem;
+    padding-bottom: 5rem;
+
+    .img-about {
+        width: 90%;
+        height: 18.8rem;
+        background-image: url(../../images/home-page-images/image-best-gear.jpg);
+        border-radius: $borderRadius;
+        background-size: cover;
+        border-radius: $borderRadius;
+        background-position: center;
+    }
+
+    .about-us {
+        width: 90%;
+        display: $displayFlex;
+        flex-direction: column;
+        align-items: $alignItems-center;
+        justify-content: $justifyContent;
+        gap: 1.5rem;
+
+
+        .about-title {
+            @include h2;
+            display: $displayBlock;
+            font-size: 1.75rem;
+            margin: 0;
+            text-align: $textAlign-center;
+            letter-spacing: 0.0625rem;
+            line-height: normal;
+
+
+            .evident-word {
+                color: $colorOrangeBright;
+            }
+        }
+
+        .paragraph-about {
+            @include paragraph;
+            text-align: $textAlign-center;
+            opacity: 0.5;
+            margin: 0;
+        }
+    }
+}

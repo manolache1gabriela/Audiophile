@@ -1,0 +1,90 @@
+@import '../abstracts/variables';
+
+body {
+    font-family: $fontFamily;
+}
+
+a {
+    text-decoration: $textDecoration;
+}
+
+
+
+@mixin h1 {
+    color: $colorBlackIntense;
+    font-size: $H1Size;
+    font-weight: $fontWeightTitlesAndSubTitles;
+    line-height: $lineHeightH1;
+    letter-spacing: $letterSpacingH1;
+    text-transform: $textTransform;
+}
+
+@mixin h2 {
+    color: $colorBlackIntense;
+    font-size: $H2Size;
+    font-weight: $fontWeightTitlesAndSubTitles;
+    line-height: $lineHeightH2;
+    letter-spacing: $letterSpacingH2;
+    text-transform: $textTransform;
+}
+
+@mixin h3 {
+    color: $colorBlackIntense;
+    font-size: $H3Size;
+    font-weight: $fontWeightTitlesAndSubTitles;
+    line-height: $lineHeightH3;
+    letter-spacing: $letterSpacingH3;
+    text-transform: $textTransform;
+}
+
+@mixin h4 {
+    color: $colorBlackIntense;
+    font-size: $H4Size;
+    font-weight: $fontWeightTitlesAndSubTitles;
+    line-height: $lineHeightNormal;
+    letter-spacing: $letterSpacingH4;
+    text-transform: $textTransform;
+}
+
+@mixin h5 {
+    color: $colorBlackIntense;
+    font-size: $H5Size;
+    font-weight: $fontWeightTitlesAndSubTitles;
+    line-height: $lineHeightNormal;
+    letter-spacing: $letterSpacingH5;
+    text-transform: $textTransform;
+}
+
+@mixin h6 {
+    color: $colorBlackIntense;
+    font-size: $H6Size;
+    font-weight: $fontWeightTitlesAndSubTitles;
+    line-height: $lineHeightNormal;
+    letter-spacing: $letterSpacingH6;
+    text-transform: $textTransform;
+}
+
+@mixin overline {
+    color: $colorOrangeBright;
+    font-size: $overlineSize;
+    font-weight: $fontWeightOverline;
+    line-height: $lineHeightNormal;
+    letter-spacing: $letterSpacingOverline;
+    text-transform: $textTransform;
+}
+
+@mixin subTitle {
+    color: $colorOrangeBright;
+    font-size: $subTitleSize;
+    font-weight: $fontWeightTitlesAndSubTitles;
+    line-height: $lineHeightSubTitle;
+    letter-spacing: $letterSpacingSubTitle;
+    text-transform: $textTransform;
+}
+
+@mixin paragraph {
+    color: $colorBlackIntense;
+    font-size: $bodySize;
+    font-weight: $fontWeightParagraph;
+    line-height: $lineHeightParagraphs;
+}
