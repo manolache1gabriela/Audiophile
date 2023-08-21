@@ -1,6 +1,3 @@
-@import '../layout/header', '../abstracts/variables', '../abstracts/mixins', '../base/typography', '../components/buttons';
-
-
 .products {
     width: 100%;
     height: 100%;
@@ -50,3 +47,25 @@
         }
     }
 }
+
+// @media (max-width: 320px) {
+//     .products {
+//         .headphones-products {
+//             img {
+//                 top: -35%;
+//             }
+//         }
+
+//         .headphones-products {
+//             img {
+//                 top: -35%;
+//             }
+//         }
+
+//         .speakers-products {
+//             img {
+//                 top: -25%;
+//             }
+//         }
+//     }
+// }

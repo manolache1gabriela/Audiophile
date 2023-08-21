@@ -1,5 +1,3 @@
-@import '../abstracts/variables', '../abstracts/mixins', '../base/typography', '../abstracts/mixins';
-
 .button-primary {
     @include buttons;
     background-color: $colorOrangeBright;
@@ -61,6 +59,52 @@
         background-color: #4C4C4C;
     }
 
+}
+
+.quantity {
+    width: 7.5rem;
+    height: 3rem;
+    display: $displayFlex;
+    align-items: $alignItems-center;
+    justify-content: space-evenly;
+    background-color: $colorWhiteGray;
+    @include subTitle;
+    text-align: $textAlign-center;
+
+    .subtract {
+        width: 100%;
+        height: 100%;
+        color: $colorBlackIntense;
+        display: $displayFlex;
+        align-items: $alignItems-center;
+        justify-content: $justifyContent-center;
+
+        &:hover {
+            color: $colorOrangeBright
+        }
+    }
+
+    .amount {
+        width: 100%;
+        height: 100%;
+        display: $displayFlex;
+        align-items: $alignItems-center;
+        justify-content: $justifyContent-center;
+        color: $colorBlackIntense;
+    }
+
+    .add {
+        width: 100%;
+        height: 100%;
+        display: $displayFlex;
+        align-items: $alignItems-center;
+        justify-content: $justifyContent-center;
+        color: $colorBlackIntense;
+
+        &:hover {
+            color: $colorOrangeBright
+        }
+    }
 }
 
 .products {

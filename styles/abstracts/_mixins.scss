@@ -1,12 +1,11 @@
-@use 'variables';
-
 @mixin buttons {
     width: $buttonsWidth;
     height: $buttonsHeight;
     flex-shrink: $flexShrink;
     display: $displayFlex;
-    justify-content: $justifyContent;
+    justify-content: $justifyContent-center;
     align-content: $alignItems-center;
+
 }
 
 @mixin products {
@@ -17,40 +16,42 @@
     }
 }
 
-@mixin header {
-    .header-pages {
+@mixin navbar {
+
+    .navbar-pages {
+        width: 100%;
         background-color: $colorBlackIntense;
         height: 5.63rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.104);
         display: $displayFlex;
         align-items: $alignItems-center;
-        justify-content: $justifyContent;
+        justify-content: $justifyContent-center;
         position: relative;
         z-index: 1;
-        padding-right: 10px;
-        padding-left: 10px;
+        padding: 0 0.625rem;
 
-        .start {
+        .navbar-menu {
             height: 100%;
-            width: 20.4375rem;
+            width: 100%;
             display: $displayFlex;
             align-items: $alignItems-center;
             justify-content: space-between;
             gap: 10px;
+            padding: 0;
 
 
             .logo {
                 justify-self: center;
-                width: 100%;
+                width: fit-content;
                 display: $displayFlex;
                 align-items: $alignItems-center;
-                justify-content: $justifyContent;
+                justify-content: $justifyContent-center;
             }
 
             .favorite_cart {
                 display: $displayFlex;
                 gap: 0.8rem;
-                padding-right: 0.6rem;
+                // padding-right: 0.6rem;
             }
 
             .menu {
@@ -74,4 +75,11 @@
         position: absolute;
 
     }
+}
+
+@mixin bg-images {
+    background-position: center;
+    background-repeat: $bgRepeat;
+    background-size: $bg-size;
+    border-radius: $borderRadius;
 }
