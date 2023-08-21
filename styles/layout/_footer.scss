@@ -1,0 +1,86 @@
+@import '../layout/header', '../abstracts/variables', '../abstracts/mixins', '../base/typography', '../components/buttons';
+
+.footer-section {
+    width: 100%;
+
+    .footer {
+        width: 100%;
+        background-color: $colorBlackIntense;
+        display: $displayFlex;
+        flex-direction: column;
+        align-items: $alignItems;
+        justify-content: flex-start;
+        position: relative;
+        margin: 0;
+        gap: 2.5rem;
+        padding: 3rem 0;
+
+        .useless-div {
+            background-color: $colorOrangeBright;
+            width: 6.3125rem;
+            height: 0.25rem;
+            position: absolute;
+            top: 0;
+        }
+
+        .page-access {
+            display: $displayFlex;
+            flex-direction: column;
+            align-items: $alignItems;
+            justify-content: $justifyContent;
+            gap: 2.5rem;
+
+            .access {
+                display: $displayFlex;
+                flex-direction: column;
+                align-items: $alignItems;
+                justify-content: $justifyContent;
+                gap: 1rem;
+
+                p {
+                    @include subTitle;
+                    color: $colorWhiteBright;
+                    margin: 0;
+
+                    &:hover {
+                        color: $colorOrangeBright;
+                    }
+                }
+            }
+        }
+
+
+        .footer-about-copyright {
+            display: $displayFlex;
+            flex-direction: column;
+            align-items: $alignItems;
+            justify-content: $justifyContent;
+            gap: 2.5rem;
+
+            .paragraph-footer {
+                width: 80%;
+                @include paragraph;
+                color: $colorWhiteBright;
+                opacity: 0.5;
+                text-align: center;
+                margin: 0;
+            }
+
+            .paragraph-copyright {
+                @include paragraph;
+                width: 80%;
+                color: $colorWhiteBright;
+                opacity: 0.5;
+                text-align: center;
+                margin: 0;
+            }
+        }
+
+        .contact {
+            display: $displayFlex;
+            width: 6.5rem;
+            align-items: $alignItems;
+            justify-content: space-between;
+        }
+    }
+}

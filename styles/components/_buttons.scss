@@ -48,6 +48,21 @@
 
 }
 
+.button-4 {
+    @include buttons;
+    background-color: $colorBlackIntense;
+
+    p {
+        @include subTitle;
+        color: $colorWhiteBright;
+    }
+
+    &:hover {
+        background-color: #4C4C4C;
+    }
+
+}
+
 .products {
     div {
 

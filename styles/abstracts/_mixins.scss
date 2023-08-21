@@ -16,3 +16,48 @@
         }
     }
 }
+
+@mixin header {
+    .header-pages {
+        background-color: $colorBlackIntense;
+        height: 5.63rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.104);
+        display: $displayFlex;
+        align-items: $alignItems;
+        justify-content: $justifyContent;
+        position: relative;
+        z-index: 1;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        .start {
+            height: 100%;
+            width: 20.4375rem;
+            display: $displayFlex;
+            align-items: $alignItems;
+            justify-content: space-between;
+            gap: 10px;
+
+
+            .logo {
+                justify-self: center;
+                width: 100%;
+                display: $displayFlex;
+                align-items: $alignItems;
+                justify-content: $justifyContent;
+            }
+
+            .favorite_cart {
+                display: $displayFlex;
+                gap: 0.8rem;
+                padding-right: 0.6rem;
+            }
+
+            .menu {
+                a {
+                    display: none;
+                }
+            }
+        }
+    }
+}
