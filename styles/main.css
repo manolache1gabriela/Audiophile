@@ -136,7 +136,7 @@ a {
   text-decoration: none;
 }
 
-.button-1 {
+.button-primary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -145,10 +145,10 @@ a {
   align-content: center;
   background-color: #D87D4A;
 }
-.button-1:hover {
+.button-primary:hover {
   background-color: #FBAF85;
 }
-.button-1 p {
+.button-primary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -158,7 +158,7 @@ a {
   color: #FFF;
 }
 
-.button-2 {
+.button-secondary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -168,7 +168,7 @@ a {
   background-color: transparent;
   border: 1px solid #000;
 }
-.button-2 p {
+.button-secondary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -177,14 +177,14 @@ a {
   text-transform: uppercase;
   color: #000;
 }
-.button-2:hover {
+.button-secondary:hover {
   background-color: #000;
 }
-.button-2:hover p {
+.button-secondary:hover p {
   color: #FFF;
 }
 
-.button-3 {
+.button-outline {
   display: flex;
   align-items: center;
   gap: 0.83263rem;
@@ -192,11 +192,11 @@ a {
   width: -moz-max-content;
   width: max-content;
 }
-.button-3 p {
+.button-outline p {
   opacity: 0.5;
 }
 
-.button-4 {
+.button-special-product {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -205,7 +205,7 @@ a {
   align-content: center;
   background-color: #000;
 }
-.button-4 p {
+.button-special-product p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -214,11 +214,11 @@ a {
   text-transform: uppercase;
   color: #FFF;
 }
-.button-4:hover {
+.button-special-product:hover {
   background-color: #4C4C4C;
 }
 
-.products div:hover .button-3 p {
+.products div:hover .button-outline p {
   color: #D87D4A;
 }
 
@@ -316,7 +316,7 @@ a {
   text-decoration: none;
 }
 
-.button-1 {
+.button-primary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -325,10 +325,10 @@ a {
   align-content: center;
   background-color: #D87D4A;
 }
-.button-1:hover {
+.button-primary:hover {
   background-color: #FBAF85;
 }
-.button-1 p {
+.button-primary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -338,7 +338,7 @@ a {
   color: #FFF;
 }
 
-.button-2 {
+.button-secondary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -348,7 +348,7 @@ a {
   background-color: transparent;
   border: 1px solid #000;
 }
-.button-2 p {
+.button-secondary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -357,14 +357,14 @@ a {
   text-transform: uppercase;
   color: #000;
 }
-.button-2:hover {
+.button-secondary:hover {
   background-color: #000;
 }
-.button-2:hover p {
+.button-secondary:hover p {
   color: #FFF;
 }
 
-.button-3 {
+.button-outline {
   display: flex;
   align-items: center;
   gap: 0.83263rem;
@@ -372,11 +372,11 @@ a {
   width: -moz-max-content;
   width: max-content;
 }
-.button-3 p {
+.button-outline p {
   opacity: 0.5;
 }
 
-.button-4 {
+.button-special-product {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -385,7 +385,7 @@ a {
   align-content: center;
   background-color: #000;
 }
-.button-4 p {
+.button-special-product p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -394,11 +394,11 @@ a {
   text-transform: uppercase;
   color: #FFF;
 }
-.button-4:hover {
+.button-special-product:hover {
   background-color: #4C4C4C;
 }
 
-.products div:hover .button-3 p {
+.products div:hover .button-outline p {
   color: #D87D4A;
 }
 
@@ -478,7 +478,7 @@ a {
   justify-content: center;
   padding-bottom: 1rem;
 }
-.best-products-section .best-products .ZX9-speaker {
+.best-products-section .best-products .special-product-card {
   width: 90%;
   height: 37.5rem;
   background-color: #D87D4A;
@@ -491,26 +491,26 @@ a {
   padding: 2rem 0;
   overflow: hidden;
 }
-.best-products-section .best-products .ZX9-speaker .circles {
+.best-products-section .best-products .special-product-card .circles {
   position: absolute;
   width: 100%;
   top: 0;
   transform: scale(1.8);
 }
-.best-products-section .best-products .ZX9-speaker .speaker-img {
+.best-products-section .best-products .special-product-card .speaker-img {
   width: 50%;
   position: absolute;
   top: 3rem;
   left: 25%;
 }
-.best-products-section .best-products .ZX9-speaker .ZX-9-info {
+.best-products-section .best-products .special-product-card .special-product-card-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
 }
-.best-products-section .best-products .ZX9-speaker .ZX-9-info .product-title {
+.best-products-section .best-products .special-product-card .special-product-card-info .product-title {
   color: #000;
   font-size: 3.5rem;
   font-weight: 700;
@@ -523,7 +523,7 @@ a {
   color: #FFF;
   margin: 0;
 }
-.best-products-section .best-products .ZX9-speaker .ZX-9-info .paragraph {
+.best-products-section .best-products .special-product-card .special-product-card-info .paragraph {
   color: #000;
   font-size: 0.938rem;
   font-weight: 500;
@@ -534,7 +534,7 @@ a {
   width: 80%;
   margin: 0;
 }
-.best-products-section .best-products .ZX7-speaker {
+.best-products-section .best-products .normal-product-card {
   width: 90%;
   height: 20rem;
   border-radius: 0.5rem;
@@ -545,7 +545,7 @@ a {
   display: flex;
   align-items: center;
 }
-.best-products-section .best-products .ZX7-speaker .ZX-7-info {
+.best-products-section .best-products .normal-product-card .normal-product-card-info {
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -554,7 +554,7 @@ a {
   gap: 1.5rem;
   padding-left: 0.75rem;
 }
-.best-products-section .best-products .ZX7-speaker .ZX-7-info .product-title {
+.best-products-section .best-products .normal-product-card .normal-product-card-info .product-title {
   color: #000;
   font-size: 3.5rem;
   font-weight: 700;
@@ -564,13 +564,13 @@ a {
   font-size: 1.6rem;
   margin: 0;
 }
-.best-products-section .best-products .YX1-earphones {
+.best-products-section .best-products .product-card-split {
   width: 90%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.best-products-section .best-products .YX1-earphones .earphones-image {
+.best-products-section .best-products .product-card-split .earphones-image {
   width: 100%;
   height: 12.5rem;
   background-image: url(../../images/home-page-images/image-earphones-yx1.jpg);
@@ -578,7 +578,7 @@ a {
   border-radius: 0.5rem;
   background-position: center;
 }
-.best-products-section .best-products .YX1-earphones .YX-1-info {
+.best-products-section .best-products .product-card-split .product-card-split-info {
   width: 100%;
   height: 12.5rem;
   border-radius: 0.5rem;
@@ -589,7 +589,7 @@ a {
   gap: 1.5rem;
   padding-left: 0.75rem;
 }
-.best-products-section .best-products .YX1-earphones .YX-1-info .product-title {
+.best-products-section .best-products .product-card-split .product-card-split-info .product-title {
   color: #000;
   font-size: 3.5rem;
   font-weight: 700;
@@ -655,7 +655,7 @@ a {
   text-decoration: none;
 }
 
-.button-1 {
+.button-primary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -664,10 +664,10 @@ a {
   align-content: center;
   background-color: #D87D4A;
 }
-.button-1:hover {
+.button-primary:hover {
   background-color: #FBAF85;
 }
-.button-1 p {
+.button-primary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -677,7 +677,7 @@ a {
   color: #FFF;
 }
 
-.button-2 {
+.button-secondary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -687,7 +687,7 @@ a {
   background-color: transparent;
   border: 1px solid #000;
 }
-.button-2 p {
+.button-secondary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -696,14 +696,14 @@ a {
   text-transform: uppercase;
   color: #000;
 }
-.button-2:hover {
+.button-secondary:hover {
   background-color: #000;
 }
-.button-2:hover p {
+.button-secondary:hover p {
   color: #FFF;
 }
 
-.button-3 {
+.button-outline {
   display: flex;
   align-items: center;
   gap: 0.83263rem;
@@ -711,11 +711,11 @@ a {
   width: -moz-max-content;
   width: max-content;
 }
-.button-3 p {
+.button-outline p {
   opacity: 0.5;
 }
 
-.button-4 {
+.button-special-product {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -724,7 +724,7 @@ a {
   align-content: center;
   background-color: #000;
 }
-.button-4 p {
+.button-special-product p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -733,11 +733,11 @@ a {
   text-transform: uppercase;
   color: #FFF;
 }
-.button-4:hover {
+.button-special-product:hover {
   background-color: #4C4C4C;
 }
 
-.products div:hover .button-3 p {
+.products div:hover .button-outline p {
   color: #D87D4A;
 }
 
@@ -916,7 +916,7 @@ a {
   text-decoration: none;
 }
 
-.button-1 {
+.button-primary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -925,10 +925,10 @@ a {
   align-content: center;
   background-color: #D87D4A;
 }
-.button-1:hover {
+.button-primary:hover {
   background-color: #FBAF85;
 }
-.button-1 p {
+.button-primary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -938,7 +938,7 @@ a {
   color: #FFF;
 }
 
-.button-2 {
+.button-secondary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -948,7 +948,7 @@ a {
   background-color: transparent;
   border: 1px solid #000;
 }
-.button-2 p {
+.button-secondary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -957,14 +957,14 @@ a {
   text-transform: uppercase;
   color: #000;
 }
-.button-2:hover {
+.button-secondary:hover {
   background-color: #000;
 }
-.button-2:hover p {
+.button-secondary:hover p {
   color: #FFF;
 }
 
-.button-3 {
+.button-outline {
   display: flex;
   align-items: center;
   gap: 0.83263rem;
@@ -972,11 +972,11 @@ a {
   width: -moz-max-content;
   width: max-content;
 }
-.button-3 p {
+.button-outline p {
   opacity: 0.5;
 }
 
-.button-4 {
+.button-special-product {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -985,7 +985,7 @@ a {
   align-content: center;
   background-color: #000;
 }
-.button-4 p {
+.button-special-product p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -994,11 +994,11 @@ a {
   text-transform: uppercase;
   color: #FFF;
 }
-.button-4:hover {
+.button-special-product:hover {
   background-color: #4C4C4C;
 }
 
-.products div:hover .button-3 p {
+.products div:hover .button-outline p {
   color: #D87D4A;
 }
 
@@ -1017,7 +1017,7 @@ a {
   gap: 2.5rem;
   padding: 3rem 0;
 }
-.footer-section .footer .useless-div {
+.footer-section .footer .notch {
   background-color: #D87D4A;
   width: 6.3125rem;
   height: 0.25rem;
@@ -1142,7 +1142,7 @@ a {
   text-decoration: none;
 }
 
-.button-1 {
+.button-primary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -1151,10 +1151,10 @@ a {
   align-content: center;
   background-color: #D87D4A;
 }
-.button-1:hover {
+.button-primary:hover {
   background-color: #FBAF85;
 }
-.button-1 p {
+.button-primary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -1164,7 +1164,7 @@ a {
   color: #FFF;
 }
 
-.button-2 {
+.button-secondary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -1174,7 +1174,7 @@ a {
   background-color: transparent;
   border: 1px solid #000;
 }
-.button-2 p {
+.button-secondary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -1183,14 +1183,14 @@ a {
   text-transform: uppercase;
   color: #000;
 }
-.button-2:hover {
+.button-secondary:hover {
   background-color: #000;
 }
-.button-2:hover p {
+.button-secondary:hover p {
   color: #FFF;
 }
 
-.button-3 {
+.button-outline {
   display: flex;
   align-items: center;
   gap: 0.83263rem;
@@ -1198,11 +1198,11 @@ a {
   width: -moz-max-content;
   width: max-content;
 }
-.button-3 p {
+.button-outline p {
   opacity: 0.5;
 }
 
-.button-4 {
+.button-special-product {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -1211,7 +1211,7 @@ a {
   align-content: center;
   background-color: #000;
 }
-.button-4 p {
+.button-special-product p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -1220,11 +1220,11 @@ a {
   text-transform: uppercase;
   color: #FFF;
 }
-.button-4:hover {
+.button-special-product:hover {
   background-color: #4C4C4C;
 }
 
-.products div:hover .button-3 p {
+.products div:hover .button-outline p {
   color: #D87D4A;
 }
 
@@ -1337,7 +1337,7 @@ a {
   text-decoration: none;
 }
 
-.button-1 {
+.button-primary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -1346,10 +1346,10 @@ a {
   align-content: center;
   background-color: #D87D4A;
 }
-.button-1:hover {
+.button-primary:hover {
   background-color: #FBAF85;
 }
-.button-1 p {
+.button-primary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -1359,7 +1359,7 @@ a {
   color: #FFF;
 }
 
-.button-2 {
+.button-secondary {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -1369,7 +1369,7 @@ a {
   background-color: transparent;
   border: 1px solid #000;
 }
-.button-2 p {
+.button-secondary p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -1378,14 +1378,14 @@ a {
   text-transform: uppercase;
   color: #000;
 }
-.button-2:hover {
+.button-secondary:hover {
   background-color: #000;
 }
-.button-2:hover p {
+.button-secondary:hover p {
   color: #FFF;
 }
 
-.button-3 {
+.button-outline {
   display: flex;
   align-items: center;
   gap: 0.83263rem;
@@ -1393,11 +1393,11 @@ a {
   width: -moz-max-content;
   width: max-content;
 }
-.button-3 p {
+.button-outline p {
   opacity: 0.5;
 }
 
-.button-4 {
+.button-special-product {
   width: 10rem;
   height: 3rem;
   flex-shrink: 0;
@@ -1406,7 +1406,7 @@ a {
   align-content: center;
   background-color: #000;
 }
-.button-4 p {
+.button-special-product p {
   color: #D87D4A;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -1415,11 +1415,11 @@ a {
   text-transform: uppercase;
   color: #FFF;
 }
-.button-4:hover {
+.button-special-product:hover {
   background-color: #4C4C4C;
 }
 
-.products div:hover .button-3 p {
+.products div:hover .button-outline p {
   color: #D87D4A;
 }
 
@@ -1440,6 +1440,8 @@ a {
 .products .headphones-products img {
   width: 50%;
   position: absolute;
+}
+.products .headphones-products img {
   top: -50%;
 }
 .products .speakers-products {
@@ -1449,9 +1451,11 @@ a {
   position: relative;
 }
 .products .speakers-products img {
+  top: -40%;
+}
+.products .speakers-products img {
   width: 50%;
   position: absolute;
-  top: -40%;
 }
 .products .earphones-products {
   align-items: center;
@@ -1460,9 +1464,11 @@ a {
   position: relative;
 }
 .products .earphones-products img {
+  top: -35%;
+}
+.products .earphones-products img {
   width: 50%;
   position: absolute;
-  top: -35%;
 }
 .products .gray-div {
   width: 90%;

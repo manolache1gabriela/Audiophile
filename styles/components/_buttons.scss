@@ -1,6 +1,6 @@
 @import '../abstracts/variables', '../abstracts/mixins', '../base/typography', '../abstracts/mixins';
 
-.button-1 {
+.button-primary {
     @include buttons;
     background-color: $colorOrangeBright;
 
@@ -14,7 +14,7 @@
     }
 }
 
-.button-2 {
+.button-secondary {
     @include buttons;
     background-color: $transparent;
     border: $buttonBorderSize $buttonBorderType $colorBlackIntense;
@@ -35,10 +35,10 @@
 }
 
 
-.button-3 {
+.button-outline {
     display: $displayFlex;
-    align-items: $alignItems;
-    gap: $gapButton-3;
+    align-items: $alignItems-center;
+    gap: $gap-button-outline;
     color: $colorBlackIntense;
     width: max-content;
 
@@ -48,7 +48,7 @@
 
 }
 
-.button-4 {
+.button-special-product {
     @include buttons;
     background-color: $colorBlackIntense;
 
