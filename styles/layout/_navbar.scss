@@ -1,0 +1,47 @@
+.navbar {
+    height: 5.63rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.104);
+    display: $displayFlex;
+    align-items: $alignItems-center;
+    justify-content: $justifyContent-center;
+    position: relative;
+    z-index: 1;
+
+    .navbar-menu {
+        height: 100%;
+        width: 100%;
+        display: $displayFlex;
+        align-items: $alignItems-center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 0 0.625rem;
+
+
+        .logo {
+            justify-self: center;
+            width: fit-content;
+            display: $displayFlex;
+            align-items: $alignItems-center;
+            justify-content: $justifyContent-center;
+        }
+
+        .favorite_cart {
+            display: $displayFlex;
+            gap: 0.8rem;
+
+        }
+
+        .menu {
+            .home-links {
+
+                display: none;
+
+                .sub-title {
+                    &:hover {
+                        color: $colorOrangeBright;
+                    }
+                }
+            }
+        }
+    }
+}

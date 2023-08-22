@@ -1,0 +1,231 @@
+.navbar {
+    @include navbar;
+}
+
+a {
+
+    .back {
+        background-color: $colorWhiteFaded;
+        @include paragraph;
+        opacity: 0.5;
+        margin: 0;
+        padding: 1.5rem 5% 0;
+    }
+}
+
+.chosen-product {
+    @include section-style;
+    background-color: $colorWhiteFaded;
+
+    a {
+        width: 90%;
+
+        .back {
+            @include paragraph;
+            opacity: 0.5;
+            margin: 0;
+        }
+    }
+
+    .product-of-type {
+        gap: 1.5rem;
+
+        .product-info {
+            align-items: flex-start;
+            justify-content: $justifyContent-center;
+            gap: 1.5rem;
+
+            .overline {
+                width: 100%;
+            }
+
+            .product-title {
+                text-align: $textAlign-start;
+            }
+
+            .info-paragraph {
+                text-align: $textAlign-start;
+            }
+        }
+    }
+
+    .product-price {
+        @include h6;
+        width: 90%;
+        margin: 0;
+    }
+
+    .cart-adding {
+        width: 90%;
+        display: $displayFlex;
+        justify-content: $justifyContent-center;
+        align-items: $alignItems-center;
+        gap: 0.5rem;
+    }
+}
+
+.features-content {
+    @include section-style;
+    gap: 4rem;
+    background-color: $colorWhiteFaded;
+
+    .features-content-title {
+        @include h3;
+        width: 100%;
+        text-align: start;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .features-paragraph,
+    .item {
+        @include paragraph;
+        margin: 0;
+        opacity: 0.5;
+    }
+
+    .features {
+        width: 90%;
+        display: $displayFlex;
+        align-items: $alignItems-center;
+        justify-content: $justifyContent-center;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .box-content {
+        width: 90%;
+        display: $displayFlex;
+        justify-content: $justifyContent-center;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .items-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: $displayFlex;
+            justify-content: $justifyContent-center;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .box-items {
+                display: $displayGrid;
+                grid-template-columns: 1rem 1fr;
+                gap: 1.5rem;
+
+                .number-of-items {
+                    @include paragraph;
+
+                    color: $colorOrangeBright;
+                }
+            }
+        }
+    }
+}
+
+.images-cards {
+    width: 100%;
+    padding: 4rem 0;
+    display: $displayFlex;
+    align-items: $alignItems-center;
+    justify-content: $justifyContent-center;
+    flex-direction: column;
+    background-color: $colorWhiteFaded;
+
+    .cards {
+        width: 90%;
+        display: $displayFlex;
+        align-items: $alignItems-center;
+        justify-content: $justifyContent-center;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        .cards-split {
+            width: 100%;
+            display: $displayFlex;
+            align-items: $alignItems-center;
+            justify-content: $justifyContent-center;
+            flex-direction: column;
+            gap: 1.25rem;
+
+            .image-card-split {
+                width: 100%;
+                height: 10.875rem;
+            }
+
+            .first {
+                @include bg-images;
+                background-image: url(../../images/home-page-images/image-gallery-1.jpg)
+            }
+
+            .second {
+                @include bg-images;
+                background-image: url(../../images/home-page-images/image-gallery-2.jpg);
+            }
+        }
+
+        .card-singular {
+            width: 100%;
+            height: 23rem;
+            background-image: url(../../images/home-page-images/image-gallery-3.jpg);
+            @include bg-images;
+        }
+    }
+}
+
+.other-products {
+    width: 100%;
+    padding: 5rem 0;
+    display: $displayFlex;
+    align-items: $alignItems-center;
+    justify-content: $justifyContent-center;
+    flex-direction: column;
+    background-color: $colorWhiteFaded;
+
+    .also-want {
+        width: 90%;
+        display: $displayFlex;
+        align-items: $alignItems-center;
+        justify-content: $justifyContent-center;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        .also-like-title {
+            @include h3;
+            width: 100%;
+            font-size: 1.5rem;
+            margin: 0;
+            text-align: $textAlign-center;
+        }
+
+        .other-product {
+            width: 100%;
+            display: $displayFlex;
+            align-items: $alignItems-center;
+            justify-content: $justifyContent-center;
+            flex-direction: column;
+            gap: 2rem;
+
+            .other-product-image {
+                width: 100%;
+                height: 7.5rem;
+                background-image: url(../../images/home-page-images/image-xx99-mark-one-headphones.jpg);
+                @include bg-images;
+            }
+
+            .other-name-btn {
+                width: 100%;
+                display: $displayFlex;
+                align-items: $alignItems-center;
+                justify-content: $justifyContent-center;
+                flex-direction: column;
+                gap: 2rem;
+
+                .other-product-title {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

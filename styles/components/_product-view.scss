@@ -1,0 +1,46 @@
+.product-of-type {
+    width: 90%;
+    display: $displayFlex;
+    flex-direction: column;
+    justify-content: $justifyContent-center;
+    align-items: $alignItems-center;
+    gap: 1rem;
+
+
+    .product-image {
+        width: 100%;
+        height: 22rem;
+        background-image: url(../../images/home-page-images/image-category-page-preview.jpg);
+        background-position: center;
+        background-repeat: $bgRepeat;
+        background-size: $bg-size;
+        border-radius: $borderRadius;
+    }
+
+    .product-info {
+        display: $displayFlex;
+        flex-direction: column;
+        justify-content: $justifyContent-center;
+        align-items: $alignItems-center;
+        gap: 1rem;
+
+        .overline {
+            @include overline;
+            margin: 0;
+        }
+
+        .product-title {
+            @include h2;
+            font-size: 1.75rem;
+            margin: 0;
+            text-align: $textAlign-center;
+        }
+
+        .info-paragraph {
+            @include paragraph;
+            margin: 0;
+            opacity: 0.5;
+            text-align: $textAlign-center;
+        }
+    }
+}

@@ -12,7 +12,7 @@
     <title>Audiophile</title>
 </head>
 <body>
-    <section class="navbar-categories">
+    <section class="navbar">
         <div class="navbar-pages">
             <div class="navbar-menu">
                 <div class="menu">
@@ -43,78 +43,152 @@
                 </div>
             </div> 
         </div>
-        <div class="category-name">
-            <h2 class="category-nametag">HEADPHONES</h2>
-        </div>
-    </section> 
-    <section class="products-by-type">
-        <div class="product-of-type">
-            <div class="product-image"></div>
-            <div class="product-info">
-                <p class="overline">NEW PRODUCT</p>
-                <h2 class="product-title">XX99 Mark II
-                Headphones</h2>
-                <p class="info-paragraph">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
+    </section>
+    <a href="#">
+        <p class="back">Go Back</p>
+    </a>
+    <section class="checkout-summary">
+        <div class="checkout">
+            <h3 class="checkout-title">CHECKOUT</h3>
+            <div class="billing details">
+                <p class="subtitle-checkout">Billing details</p>
+                <form action="#" method="post" class="check-form">
+                    <div class="form-input">
+                        <div class="label-and-error">
+                            <label class="form-label" for="name">Name</label>
+                            <span class="error-text">Wrong format</span>
+                        </div>
+                        <input class="inputs" type="text" required name="name" id="name" placeholder="Alexei Ward">
+                    </div>
+                    <div class="form-input">
+                        <div class="label-and-error">
+                            <label class="form-label" for="email">Email Address</label>
+                            <span class="error-text">Wrong format</span>
+                        </div>
+                        <input class="inputs" type="email" required name="email" id="email" placeholder="alexei@mail.com">
+                    </div>
+                    <div class="form-input">
+                        <div class="label-and-error">
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <span class="error-text">Wrong format</span>
+                        </div>
+                        <input class="inputs" type="tel" required name="phone" id="phone" placeholder="+1 202-555-0136">
+                    </div>
+                </form>
             </div>
-            <a href="#">
-                <div class="button-primary">
-                    <p class="sub-title">See Product</p>
+            <div class="shipping details">
+            <p class="subtitle-checkout">shipping info</p>
+                <form action="#" method="post" class="check-form">
+                    <div class="form-input">
+                        <div class="label-and-error">
+                            <label class="form-label" for="address">Your Address</label>
+                        <span class="error-text">Wrong format</span>
+                        </div>
+                        <input class="inputs" type="text" required name="address" id="address" placeholder="1137 Williams Avenue">
+                    </div>
+                    <div class="form-input">
+                        <div class="label-and-error">
+                            <label class="form-label" for="zip-code">ZIP Code</label>
+                            <span class="error-text">Wrong format</span>
+                        </div>
+                        <input class="inputs" type="text" required name="zip-code" id="zip-code" placeholder="10001">
+                    </div>
+                    <div class="form-input">
+                        <div class="label-and-error">
+                            <label class="form-label" for="city">City</label>
+                            <span class="error-text">Wrong format</span>
+                        </div>
+                        <input class="inputs" type="text" required name="city" id="city" placeholder="New York">
+                    </div>
+                    <div class="form-input">
+                        <div class="label-and-error">
+                            <label class="form-label" for="country">Country</label>
+                            <span class="error-text">Wrong format</span>
+                        </div>
+                        <input class="inputs" type="text" required name="country" id="country" placeholder="United States">
+                    </div>
+                </form>
+            </div>
+            <div class="payment details">
+                <p class="subtitle-checkout">payment details</p>
+                <form action="#" method="post" class="check-form">
+                <div class="form-input">
+                    <label class="form-label" for="payment">Payment Method</label>
+                    <div class="payment-methods">
+                        <div class="card-method">
+                            <label class="form-label" for="e-money">
+                                <input class="inputs input-method" type="radio" name="payment" id="e-money">
+                                <span class="radio-text">e-Money</span>
+                            </label>
+                        </div>
+                        <div class="cash-method">
+                            <label  class="form-label" for="cash">
+                                <input class="inputs input-method" type="radio" name="payment" id="cash">
+                                <span class="radio-text">Cash on Delivery</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </a>
+                <div class="form-inputs-e-money">
+                    <div class="label-and-error">
+                        <label class="form-label" for="card-number">e-Money Number</label>
+                        <span class="error-text">Wrong format</span>
+                    </div>
+                    <input class="inputs" type="text" required name="card-number" id="card-number" placeholder="238521993">
+                </div>
+                <div class="form-inputs-e-money">
+                    <div class="label-and-error">
+                        <label class="form-label" for="card-pin">e-Money PIN</label>
+                        <span class="error-text">Wrong format</span>
+                    </div>
+                    <input class="inputs" type="text" required name="card-pin" id="card-pin" placeholder="6891">
+                </div>
+                <div class="cash-on-delivery-information">
+                    <img src="../images/home-page-images/icon-cash-on-delivery.svg" alt="cash on delivery icon">
+                    <p class="cash-on-delivery-info">
+                        The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
+                    </p>
+                </div>
+                </form>
+            </div>
         </div>
-    </section>
-    <section class="products-section">
-        <div class="products">
-            <a href="#">
-                <div class="headphones-products">
-                    <img src="../images/home-page-images/image-category-thumbnail-headphones.png" alt="headphones image">
-                <div class="gray-div">
-                    <h6 class="prod-type">HEADPHONES</h6>
-                        <div class="button-outline">
-                            <p class="sub-title">Shop</p>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-                                    <path d="M1.3219 1L6.3219 6L1.3219 11" stroke="#D87D4A" stroke-width="2"/>
-                                </svg>
+        <div class="summary">
+            <h6 class="product-price">summary</h6>
+            <div class="cart-summary">
+                <div class="cart-item">
+                    <div class="cart-product-img"></div>
+                    <div class="cart-product-info">
+                        <div class="cart-product-name">
+                            <p class="product-name">XX99 MK II</p>
+                            <p class="product-price">$ 2,999</p>
                         </div>
+                        <span class="number-of-items">x1</span>
                     </div>
                 </div>
-            </a>
-            <a href="#">
-            <div class="speakers-products">
-                <img src="../images/home-page-images/image-category-thumbnail-speakers.png" alt="speakers image">
-                <div class="gray-div">
-                    <h6 class="prod-type">SPEAKERS</h6>
-                        <div class="button-outline">
-                            <p class="sub-title">Shop</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-                                <path d="M1.3219 1L6.3219 6L1.3219 11" stroke="#D87D4A" stroke-width="2"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-            <div class="earphones-products">
-                <img src="../images/home-page-images/image-category-thumbnail-earphones.png" alt="earphones image">
-                <div class="gray-div">
-                    <h6 class="prod-type">EARPHONES</h6>
-                        <div class="button-outline">
-                            <p class="sub-title">Shop</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-                                <path d="M1.3219 1L6.3219 6L1.3219 11" stroke="#D87D4A" stroke-width="2"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </a>
-    </div>
-    </section>
-    <section class="about">
-        <div class="img-about"></div>
-        <div class="about-us">
-            <h2 class="about-title">Bringing you the <span class="evident-word">best</span> audio gear</h2>
-            <p class="paragraph-about">Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
+            </div>
+            <div class="paying-summary">
+                <ul class="payment-parts">
+                    <li class="payment-part">
+                        <p class="part-name">TOTAL</p>
+                        <span class="part-amount">$ 5,396</span>
+                    </li>
+                    <li class="payment-part">
+                        <p class="part-name">SHIPPING</p>
+                        <span class="part-amount">$ 50</span>
+                    </li>
+                    <li class="payment-part">
+                        <p class="part-name">VAT (INCLUDED)</p>
+                        <span class="part-amount">$ 1,079</span>
+                    </li>
+                </ul>
+                <ul class="payment-total">
+                    <li class="total-sum">
+                        <p class="total-sum-name">GRAND TOTAL</p>
+                        <span class="total-amount">$ 5,446</span>
+                    </li>
+                </ul>
+            </div>
+            <input class="button-primary submit-btn" type="submit" value="CONTINUE & PAY">
         </div>
     </section>
     <section class="footer-section">

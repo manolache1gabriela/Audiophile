@@ -1,5 +1,3 @@
-@import '../abstracts/variables';
-
 body {
     font-family: $fontFamily;
 }
@@ -84,6 +82,12 @@ a {
 
 @mixin paragraph {
     color: $colorBlackIntense;
+    font-size: $bodySize;
+    font-weight: $fontWeightParagraph;
+    line-height: $lineHeightParagraphs;
+}
+
+@mixin label {
     font-size: $bodySize;
     font-weight: $fontWeightParagraph;
     line-height: $lineHeightParagraphs;
