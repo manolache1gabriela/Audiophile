@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 5rem;
     padding: 7rem 0;
+    background-color: $colorWhiteFaded;
 
     .headphones-products {
         @include product-categories-button;

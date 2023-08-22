@@ -1,0 +1,285 @@
+.checkout-summary {
+    @include section-style;
+    background-color: $colorWhiteFaded;
+
+    .error-text {
+        @include wrong;
+        display: none;
+    }
+
+    .checkout {
+        width: 90%;
+        @include displayFlex-style;
+        background-color: $colorWhiteBright;
+        border-radius: $borderRadius;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+
+
+        .label-and-error {
+            width: 100%;
+            display: $displayGrid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            align-items: $alignItems-center;
+
+        }
+
+        .details {
+            width: 100%;
+            @include displayFlex-style;
+            gap: 1rem;
+        }
+
+        .checkout-title {
+            @include h3;
+            font-size: 1.75rem;
+            align-self: flex-start;
+            margin: 0;
+        }
+
+        .subtitle-checkout {
+            @include subTitle;
+            align-self: flex-start;
+            margin: 0;
+        }
+
+        .check-form {
+            width: 100%;
+            @include displayFlex-style;
+            gap: 1rem;
+
+            .form-inputs-e-money {
+                width: 100%;
+                display: $displayFlex;
+                @include displayFlex-style;
+                gap: 0.5rem;
+            }
+
+            .form-label {
+                @include label;
+                font-size: 0.75rem;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            .form-input {
+                width: 100%;
+                @include displayFlex-style;
+                align-items: flex-start;
+                gap: 0.5rem;
+
+
+
+                .payment-methods {
+                    width: 100%;
+                    @include displayFlex-style;
+                    align-items: flex-start;
+                    gap: 1rem;
+
+                    .form-label {
+                        font-size: 0.875rem;
+                    }
+
+                    .card-method {
+                        width: 100%;
+                        height: 3.5rem;
+                        border: 0.0625rem solid #CFCFCF;
+                        border-radius: $borderRadius;
+                        padding: 1rem;
+
+                    }
+
+                    .form-label {
+                        width: 100%;
+                        height: 100%;
+                        display: $displayFlex;
+                        flex-direction: row;
+                        gap: 1rem;
+                        align-items: $alignItems-center;
+
+                        .radio-text {
+                            @include paragraph;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .cash-method {
+                        width: 100%;
+                        height: 3.5rem;
+                        border: 0.0625rem solid #CFCFCF;
+                        border-radius: $borderRadius;
+                        padding: 1rem;
+                    }
+                }
+            }
+
+            .cash-on-delivery-information {
+                width: 100%;
+                @include displayFlex-style;
+                gap: 1rem;
+                padding: 2rem 0 0;
+
+                .cash-on-delivery-info {
+                    opacity: 0.5;
+                    text-align: center;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .summary {
+        width: 90%;
+        @include displayFlex-style;
+        background-color: $colorWhiteBright;
+        border-radius: $borderRadius;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+
+        .product-price {
+            @include h6;
+            font-size: 1.125rem;
+            align-self: flex-start;
+            margin: 0;
+        }
+
+        .cart-summary {
+            @include displayFlex-style;
+            width: 100%;
+
+            .cart-item {
+                width: 100%;
+                height: 4rem;
+                display: $displayGrid;
+                grid-template-columns: 4rem auto;
+                align-items: $alignItems-center;
+                gap: 1rem;
+
+                .cart-product-img {
+                    width: 4rem;
+                    height: 4rem;
+                    background-image: url(../../images/home-page-images/image-xx99-mark-two-headphones-cart.jpg);
+                    @include bg-images;
+                }
+
+                .cart-product-info {
+                    display: $displayGrid;
+                    grid-template-columns: auto 2rem;
+                    gap: 1rem;
+
+                    .cart-product-name {
+                        display: $displayGrid;
+                        grid-template-rows: repeat(50%, 2);
+                        gap: 0.25rem;
+
+                        .product-name {
+                            @include paragraph;
+                            font-style: normal;
+                            font-weight: 700;
+                            margin: 0;
+                        }
+
+                        .product-price {
+                            @include paragraph;
+                            font-size: 0.875rem;
+                            font-style: normal;
+                            font-weight: 700;
+                            margin: 0;
+                            opacity: 0.5;
+                        }
+                    }
+
+                    .number-of-items {
+                        text-align: center;
+                        @include paragraph;
+                        font-weight: 700;
+                        margin: 0;
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+
+        .paying-summary {
+            width: 100%;
+            display: $displayFlex;
+            @include displayFlex-style;
+            gap: 1.5rem;
+
+            .payment-parts {
+                width: 100%;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: $displayFlex;
+                justify-content: $justifyContent-center;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                .payment-part {
+                    display: $displayGrid;
+                    grid-template-columns: 1fr 5rem;
+                    gap: 1.5rem;
+                    align-items: center;
+
+                    .part-name {
+                        @include paragraph;
+                        margin: 0;
+                        opacity: 0.5;
+                    }
+
+                    .part-amount {
+                        @include h6;
+                        font-size: 1.125rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        text-align: right;
+                    }
+                }
+
+            }
+
+            .payment-total {
+                width: 100%;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: $displayFlex;
+                justify-content: $justifyContent-center;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                .total-sum {
+                    display: $displayGrid;
+                    grid-template-columns: 1fr 5rem;
+                    gap: 1.5rem;
+                    align-items: center;
+
+                    .total-sum-name {
+                        @include paragraph;
+                        margin: 0;
+                        opacity: 0.5;
+                    }
+
+                    .total-amount {
+                        @include h6;
+                        font-size: 1.125rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        text-align: right;
+                        color: $colorOrangeBright;
+                    }
+                }
+            }
+        }
+
+        .submit-btn {
+            border: 0;
+            @include subTitle;
+            color: $colorWhiteBright;
+            width: 100%;
+        }
+
+    }
+}

@@ -86,3 +86,9 @@ a {
     font-weight: $fontWeightParagraph;
     line-height: $lineHeightParagraphs;
 }
+
+@mixin label {
+    font-size: $bodySize;
+    font-weight: $fontWeightParagraph;
+    line-height: $lineHeightParagraphs;
+}

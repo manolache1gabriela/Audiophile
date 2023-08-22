@@ -28,11 +28,19 @@
         .favorite_cart {
             display: $displayFlex;
             gap: 0.8rem;
+
         }
 
         .menu {
-            a {
+            .home-links {
+
                 display: none;
+
+                .sub-title {
+                    &:hover {
+                        color: $colorOrangeBright;
+                    }
+                }
             }
         }
     }

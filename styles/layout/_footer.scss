@@ -8,7 +8,6 @@
         display: $displayFlex;
         flex-direction: column;
         align-items: $alignItems-center;
-        justify-content: $justifyContent-center;
         position: relative;
         margin: 0;
         gap: 2.5rem;
@@ -80,6 +79,14 @@
             width: 6.5rem;
             align-items: $alignItems-center;
             justify-content: space-between;
+
+            a {
+                svg:hover {
+                    path {
+                        fill: $colorOrangeBright;
+                    }
+                }
+            }
         }
     }
 }

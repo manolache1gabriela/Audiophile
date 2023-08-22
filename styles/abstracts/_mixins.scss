@@ -51,12 +51,17 @@
             .favorite_cart {
                 display: $displayFlex;
                 gap: 0.8rem;
-                // padding-right: 0.6rem;
             }
 
             .menu {
-                a {
+                .home-links {
                     display: none;
+
+                    .sub-title {
+                        &:hover {
+                            color: $colorOrangeBright;
+                        }
+                    }
                 }
             }
         }
@@ -82,4 +87,28 @@
     background-repeat: $bgRepeat;
     background-size: $bg-size;
     border-radius: $borderRadius;
+}
+
+@mixin displayFlex-style {
+    display: $displayFlex;
+    justify-content: $justifyContent-center;
+    align-items: $alignItems-center;
+    flex-direction: column;
+}
+
+@mixin section-style {
+    padding: 1.5rem 0;
+    width: 100%;
+    display: $displayFlex;
+    align-items: $alignItems-center;
+    justify-content: $justifyContent-center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@mixin wrong {
+    @include paragraph;
+    font-size: 0.75rem;
+    text-align: right;
+    color: #CD2C2C;
 }

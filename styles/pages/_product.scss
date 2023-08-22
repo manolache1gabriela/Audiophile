@@ -2,15 +2,20 @@
     @include navbar;
 }
 
+a {
+
+    .back {
+        background-color: $colorWhiteFaded;
+        @include paragraph;
+        opacity: 0.5;
+        margin: 0;
+        padding: 1.5rem 5% 0;
+    }
+}
 
 .chosen-product {
-    padding: 1.5rem 0;
-    width: 100%;
-    display: $displayFlex;
-    align-items: $alignItems-center;
-    justify-content: $justifyContent-center;
-    flex-direction: column;
-    gap: 1.5rem;
+    @include section-style;
+    background-color: $colorWhiteFaded;
 
     a {
         width: 90%;
@@ -60,13 +65,9 @@
 }
 
 .features-content {
-    padding: 1.5rem 0;
-    width: 100%;
-    display: $displayFlex;
-    align-items: $alignItems-center;
-    justify-content: $justifyContent-center;
-    flex-direction: column;
+    @include section-style;
     gap: 4rem;
+    background-color: $colorWhiteFaded;
 
     .features-content-title {
         @include h3;
@@ -109,13 +110,9 @@
             gap: 0.5rem;
 
             .box-items {
-                display: $displayFlex;
-                align-items: $alignItems-center;
+                display: $displayGrid;
+                grid-template-columns: 1rem 1fr;
                 gap: 1.5rem;
-
-                .special-item {
-                    transform: translateX(-0.2rem);
-                }
 
                 .number-of-items {
                     @include paragraph;
@@ -134,6 +131,7 @@
     align-items: $alignItems-center;
     justify-content: $justifyContent-center;
     flex-direction: column;
+    background-color: $colorWhiteFaded;
 
     .cards {
         width: 90%;
@@ -183,7 +181,7 @@
     align-items: $alignItems-center;
     justify-content: $justifyContent-center;
     flex-direction: column;
-
+    background-color: $colorWhiteFaded;
 
     .also-want {
         width: 90%;
