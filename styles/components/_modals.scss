@@ -1,0 +1,179 @@
+.body-overflow {
+    overflow-y: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#thanks-modal {
+    position: absolute;
+    max-height: 80%;
+    overflow-y: scroll;
+    border-radius: $borderRadius;
+    border: 0;
+    padding: 2rem;
+    margin-top: 30%;
+    background-color: $colorWhiteBright;
+
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &::backdrop {
+        background-color: $colorBlackIntense;
+        opacity: 0.4;
+    }
+
+    .dialog-visual {
+        width: 100%;
+        height: 100%;
+        display: $displayFlex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1.5rem;
+
+        .confirmation {
+            width: 100%;
+            display: $displayFlex;
+            @include displayFlex-style;
+            align-items: flex-start;
+            gap: 1rem;
+
+            .confirm-title {
+                width: 100%;
+                margin: 0;
+                @include h3;
+                font-size: 1.5rem;
+            }
+
+            .confirm-text {
+                @include paragraph;
+                opacity: 0.5;
+                margin: 0
+            }
+        }
+
+        .confirm-summary {
+            width: 100%;
+            display: $displayGrid;
+            grid-template-rows: auto 1fr;
+            border-radius: $borderRadius;
+
+            .summary {
+                width: 100%;
+
+                background-color: $colorWhiteGray;
+                display: $displayGrid;
+                grid-template-rows: auto 1fr;
+                border-top-right-radius: $borderRadius;
+                border-top-left-radius: $borderRadius;
+
+                .cart-items {
+                    display: $displayGrid;
+                    gap: 0.5rem;
+                    width: 100%;
+                    max-height: 8.5rem;
+                    overflow-y: scroll;
+                    padding: 1rem 3% 0;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    .cart-item {
+                        @include cart-products-style;
+                    }
+                }
+
+
+                .others-from-cart {
+                    border-top: 0.0625rem solid rgba(0, 0, 0, 0.4);
+
+                    .view-others {
+                        width: 100%;
+                        height: 3rem;
+                        outline: 0;
+                        border: 0;
+                        padding: 0;
+
+                        .view-text {
+                            @include paragraph;
+                            font-size: 0.75rem;
+                            font-weight: 700;
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+
+            .grand-total {
+                border-bottom-right-radius: $borderRadius;
+                border-bottom-left-radius: $borderRadius;
+                width: 100%;
+                min-height: 6rem;
+                display: $displayFlex;
+                @include displayFlex-style;
+                align-items: flex-start;
+                padding: 0 3%;
+                background-color: $colorBlackIntense;
+                gap: 0.5rem;
+
+                .grand-title {
+                    @include paragraph;
+                    color: $colorWhiteBright;
+                    opacity: 0.5;
+                }
+
+                .grand-amount {
+                    @include h6;
+                    color: $colorWhiteBright;
+                }
+            }
+        }
+
+        .button-primary {
+            width: 100%;
+        }
+    }
+
+}
+
+#pages-links {
+    position: absolute;
+    min-width: 100%;
+    padding: 0;
+    max-height: 70%;
+    margin: 0;
+    top: 5.63rem;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    background-color: $colorWhiteBright;
+    border: 0;
+    border-radius: 0 0 $borderRadius $borderRadius;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &::backdrop {
+        background-color: $colorBlackIntense;
+        opacity: 0.4;
+    }
+
+    .product-section {
+        width: 100%;
+
+        background-color: $colorWhiteBright;
+
+        .products {
+            @include product-categories-style;
+        }
+
+    }
+}

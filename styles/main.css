@@ -363,7 +363,7 @@ input[type=radio] {
 .home .darken {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .home .new-product {
@@ -551,6 +551,300 @@ input[type=radio] {
   text-transform: uppercase;
   font-size: 1.6rem;
   margin: 0;
+}
+
+.body-overflow {
+  overflow-y: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#thanks-modal {
+  position: absolute;
+  max-height: 80%;
+  overflow-y: scroll;
+  border-radius: 0.5rem;
+  border: 0;
+  padding: 2rem;
+  margin-top: 30%;
+  background-color: #FFF;
+  scrollbar-width: none;
+}
+#thanks-modal::-webkit-scrollbar {
+  display: none;
+}
+#thanks-modal:focus {
+  outline: 0;
+}
+#thanks-modal::backdrop {
+  background-color: #000;
+  opacity: 0.4;
+}
+#thanks-modal .dialog-visual {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+#thanks-modal .dialog-visual .confirmation {
+  width: 100%;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+#thanks-modal .dialog-visual .confirmation .confirm-title {
+  width: 100%;
+  margin: 0;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+  letter-spacing: 0.07144rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+#thanks-modal .dialog-visual .confirmation .confirm-text {
+  color: #000;
+  font-size: 0.938rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  opacity: 0.5;
+  margin: 0;
+}
+#thanks-modal .dialog-visual .confirm-summary {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: 0.5rem;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary {
+  width: 100%;
+  background-color: #F1F1F1;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .cart-items {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  max-height: 8.5rem;
+  overflow-y: scroll;
+  padding: 1rem 3% 0;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .cart-items::-webkit-scrollbar {
+  display: none;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .cart-items .cart-item {
+  width: 100%;
+  height: 4rem;
+  display: grid;
+  grid-template-columns: 4rem auto;
+  align-items: center;
+  gap: 1rem;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .cart-items .cart-item .cart-product-img {
+  width: 4rem;
+  height: 4rem;
+  background-image: url(../../images/home-page-images/image-xx99-mark-two-headphones-cart.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .cart-items .cart-item .cart-product-info {
+  display: grid;
+  grid-template-columns: auto 2rem;
+  gap: 1rem;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .cart-items .cart-item .cart-product-info .cart-product-name {
+  display: grid;
+  grid-template-rows: repeat(50%, 2);
+  gap: 0.25rem;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .cart-items .cart-item .cart-product-info .cart-product-name .product-name {
+  color: #000;
+  font-size: 0.938rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .cart-items .cart-item .cart-product-info .cart-product-name .product-price {
+  color: #000;
+  font-size: 0.938rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+  opacity: 0.5;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .cart-items .cart-item .cart-product-info .number-of-items {
+  text-align: center;
+  color: #000;
+  font-size: 0.938rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  font-weight: 700;
+  margin: 0;
+  opacity: 0.5;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .others-from-cart {
+  border-top: 0.0625rem solid rgba(0, 0, 0, 0.4);
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .others-from-cart .view-others {
+  width: 100%;
+  height: 3rem;
+  outline: 0;
+  border: 0;
+  padding: 0;
+}
+#thanks-modal .dialog-visual .confirm-summary .summary .others-from-cart .view-others .view-text {
+  color: #000;
+  font-size: 0.938rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.5;
+}
+#thanks-modal .dialog-visual .confirm-summary .grand-total {
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  width: 100%;
+  min-height: 6rem;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 3%;
+  background-color: #000;
+  gap: 0.5rem;
+}
+#thanks-modal .dialog-visual .confirm-summary .grand-total .grand-title {
+  color: #000;
+  font-size: 0.938rem;
+  font-weight: 500;
+  line-height: 1.5625rem;
+  color: #FFF;
+  opacity: 0.5;
+}
+#thanks-modal .dialog-visual .confirm-summary .grand-total .grand-amount {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.08038rem;
+  text-transform: uppercase;
+  color: #FFF;
+}
+#thanks-modal .dialog-visual .button-primary {
+  width: 100%;
+}
+
+#pages-links {
+  position: absolute;
+  min-width: 100%;
+  padding: 0;
+  max-height: 70%;
+  margin: 0;
+  top: 5.63rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  background-color: #FFF;
+  border: 0;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+#pages-links::-webkit-scrollbar {
+  display: none;
+}
+#pages-links::backdrop {
+  background-color: #000;
+  opacity: 0.4;
+}
+#pages-links .product-section {
+  width: 100%;
+  background-color: #FFF;
+}
+#pages-links .product-section .products {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 7rem 0;
+}
+#pages-links .product-section .products .headphones-products {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#pages-links .product-section .products .headphones-products img {
+  width: 50%;
+  position: absolute;
+}
+#pages-links .product-section .products .headphones-products img {
+  top: -50%;
+}
+#pages-links .product-section .products .speakers-products {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#pages-links .product-section .products .speakers-products img {
+  top: -40%;
+}
+#pages-links .product-section .products .speakers-products img {
+  width: 50%;
+  position: absolute;
+}
+#pages-links .product-section .products .earphones-products {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#pages-links .product-section .products .earphones-products img {
+  top: -35%;
+}
+#pages-links .product-section .products .earphones-products img {
+  width: 50%;
+  position: absolute;
+}
+#pages-links .product-section .products .gray-div {
+  width: 90%;
+  height: 10.3125rem;
+  background-color: #F1F1F1;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+#pages-links .product-section .products .gray-div .prod-type {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.08038rem;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 15px;
 }
 
 .navbar-categories .navbar-pages {
@@ -938,9 +1232,9 @@ a .back {
 .chosen-product .cart-adding {
   width: 90%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .features-content {
@@ -1356,11 +1650,9 @@ a .back {
   margin: 0;
 }
 .checkout-summary .summary .cart-summary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   width: 100%;
+  display: grid;
+  gap: 0.5rem;
 }
 .checkout-summary .summary .cart-summary .cart-item {
   width: 100%;

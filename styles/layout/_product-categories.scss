@@ -1,52 +1,6 @@
 .products {
-    width: 100%;
-    height: 100%;
-    display: $displayFlex;
-    flex-direction: column;
-    gap: 5rem;
-    padding: 7rem 0;
+    @include product-categories-style;
     background-color: $colorWhiteFaded;
-
-    .headphones-products {
-        @include product-categories-button;
-
-        img {
-            top: -50%;
-        }
-    }
-
-    .speakers-products {
-        img {
-            top: -40%;
-        }
-
-        @include product-categories-button;
-    }
-
-    .earphones-products {
-        img {
-            top: -35%;
-        }
-
-        @include product-categories-button;
-    }
-
-    .gray-div {
-        width: 90%;
-        height: 10.3125rem;
-        background-color: $colorWhiteGray;
-        border-radius: $borderRadius;
-        display: $displayFlex;
-        flex-direction: column;
-        justify-content: end;
-        align-items: $alignItems-center;
-
-        .prod-type {
-            @include h6;
-            margin: 0;
-            font-size: 15px;
-        }
-    }
 }
 
 // @media (max-width: 320px) {
