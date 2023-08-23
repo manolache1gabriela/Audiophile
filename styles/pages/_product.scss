@@ -58,9 +58,9 @@ a {
     .cart-adding {
         width: 90%;
         display: $displayFlex;
-        justify-content: $justifyContent-center;
+        justify-content: flex-start;
         align-items: $alignItems-center;
-        gap: 0.5rem;
+        gap: 1rem;
     }
 }
 
