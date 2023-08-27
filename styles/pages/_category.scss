@@ -1,5 +1,6 @@
 .navbar-categories {
     @include navbar;
+    background-color: $colorBlackIntense;
 
     .category-name {
         width: 100%;
@@ -16,6 +17,14 @@
             margin: 0;
             width: 100%;
             text-align: $textAlign-center;
+        }
+    }
+
+    @include devices(tablet) {
+        .category-name {
+            .category-nametag {
+                font-size: 2.5rem;
+            }
         }
     }
 }

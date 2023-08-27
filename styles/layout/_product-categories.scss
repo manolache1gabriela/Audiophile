@@ -1,26 +1,9 @@
-.products {
-    @include product-categories-style;
+.products-section {
+    width: 100%;
+    height: 100%;
     background-color: $colorWhiteFaded;
+
+    .products {
+        @include product-categories-style;
+    }
 }
-
-// @media (max-width: 320px) {
-//     .products {
-//         .headphones-products {
-//             img {
-//                 top: -35%;
-//             }
-//         }
-
-//         .headphones-products {
-//             img {
-//                 top: -35%;
-//             }
-//         }
-
-//         .speakers-products {
-//             img {
-//                 top: -25%;
-//             }
-//         }
-//     }
-// }

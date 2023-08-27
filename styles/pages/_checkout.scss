@@ -1,3 +1,7 @@
+.from-checkout {
+    background-color: $colorWhiteGray;
+}
+
 .checkout-summary {
     @include section-style;
     background-color: $colorWhiteFaded;
@@ -54,6 +58,11 @@
                 display: $displayFlex;
                 @include displayFlex-style;
                 gap: 0.5rem;
+                display: none;
+            }
+
+            .e-money-chose {
+                display: flex;
             }
 
             .form-label {
@@ -119,12 +128,17 @@
                 @include displayFlex-style;
                 gap: 1rem;
                 padding: 2rem 0 0;
+                display: none;
 
                 .cash-on-delivery-info {
                     opacity: 0.5;
                     text-align: center;
                     margin: 0;
                 }
+            }
+
+            .cash-chose {
+                display: flex;
             }
         }
     }
@@ -235,5 +249,59 @@
             width: 100%;
         }
 
+    }
+
+    @include devices(tablet) {
+        .checkout {
+            .checkout-title {
+                font-size: 2rem;
+            }
+
+            .check-form {
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+
+                .form-input {
+                    width: 48%;
+                }
+
+                .address {
+                    width: 98%;
+                }
+
+                .payment-form {
+                    width: 100%;
+                    flex-direction: row;
+
+                    .form-label {
+                        width: 100%;
+                    }
+                }
+
+                .form-inputs-e-money {
+                    width: 48%;
+                }
+
+                .cash-on-delivery-information {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+    @include devices(laptop) {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 3rem 5% 8rem;
+        background-color: $colorWhiteGray;
+
+        .checkout {
+            width: 100%;
+        }
+
+        .summary {
+            width: 50%;
+        }
     }
 }

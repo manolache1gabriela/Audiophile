@@ -47,4 +47,44 @@
             margin: 0;
         }
     }
+
+    @include devices(tablet) {
+        gap: 4rem;
+
+        .img-about {
+            background-image: url(../../images/home-page-images/image-best-gear-tablet.jpg);
+        }
+
+        .about-us {
+            width: 75%;
+
+            .about-title {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    @include devices(laptop) {
+        gap: 6.5rem;
+        flex-direction: row-reverse;
+        padding: 0 5% 5rem;
+
+        .img-about {
+            background-image: url(../../images/home-page-images/image-best-gear-desktop.jpg);
+            height: 36.8rem;
+            width: 100%;
+        }
+
+        .about-us {
+            width: 100%;
+
+            .about-title {
+                text-align: left;
+            }
+
+            .paragraph-about {
+                text-align: left;
+            }
+        }
+    }
 }

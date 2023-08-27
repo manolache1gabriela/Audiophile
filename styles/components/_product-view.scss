@@ -43,4 +43,45 @@
             text-align: $textAlign-center;
         }
     }
+
+    @include devices(tablet) {
+        gap: 3.25rem;
+
+        .product-image {
+            background-image: url(../../images/home-page-images/image-category-page-preview-tablet.jpg);
+        }
+
+        .product-info {
+            width: 75%;
+
+            .product-title {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+        }
+    }
+
+    @include devices(laptop) {
+        flex-direction: row;
+        gap: 7rem;
+
+        .product-image {
+            width: 100%;
+            height: 35rem;
+        }
+
+        .product-info {
+            width: 100%;
+            align-items: flex-start;
+
+            .product-title {
+                text-align: left;
+            }
+
+            .info-paragraph {
+                text-align: left;
+            }
+        }
+    }
 }

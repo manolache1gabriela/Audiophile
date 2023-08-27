@@ -142,6 +142,11 @@
         }
     }
 
+    @include devices(laptop) {
+        width: 50%;
+        top: unset;
+        bottom: 5%;
+    }
 }
 
 #pages-links {
@@ -161,6 +166,10 @@
         display: none;
     }
 
+    &:focus {
+        outline: 0;
+    }
+
     &::backdrop {
         background-color: $colorBlackIntense;
         opacity: 0.4;
@@ -175,5 +184,217 @@
             @include product-categories-style;
         }
 
+    }
+}
+
+
+#cart-modal {
+    min-width: 90%;
+    max-width: 23rem;
+    position: absolute;
+    max-height: 70%;
+    overflow-y: scroll;
+    border-radius: $borderRadius;
+    border: 0;
+    padding: 2rem 1.75rem;
+    background-color: $colorWhiteBright;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &::backdrop {
+        background-color: $colorBlackIntense;
+        opacity: 0.4;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    .cart-modal-view {
+        width: 100%;
+        height: 100%;
+        @include displayFlex-style;
+        gap: 2rem;
+
+    }
+
+    .items-number-remove {
+        @include remove-items-text-style;
+    }
+
+    .cart-summary {
+        @include items-summary;
+    }
+
+    .total {
+        width: 100%;
+        @include displayFlex-style;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .total-text {
+            @include paragraph;
+            opacity: 0.5;
+        }
+
+        .total-amount {
+            @include h6;
+        }
+    }
+
+    a {
+        width: 100%;
+
+        .button-primary {
+            width: 100%;
+        }
+    }
+
+    @include devices(tablet) {
+        min-width: unset;
+        width: 50%;
+        top: -7.3rem;
+        left: 23rem;
+    }
+
+    @include devices(laptop) {
+        min-width: unset;
+        top: -7.3rem;
+        left: 38rem;
+    }
+}
+
+.no-items {
+    @include paragraph;
+    font-size: 1.15rem;
+    display: none;
+}
+
+.removed {
+    display: none;
+}
+
+.removed-items {
+    display: block;
+}
+
+#favorite-modal {
+    min-width: 90%;
+    max-width: 23rem;
+    position: absolute;
+    max-height: 70%;
+    overflow-y: scroll;
+    border-radius: $borderRadius;
+    border: 0;
+    padding: 2rem 1.75rem;
+    background-color: $colorWhiteBright;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &::backdrop {
+        background-color: $colorBlackIntense;
+        opacity: 0.4;
+    }
+
+    &:focus {
+        outline: 0;
+
+    }
+
+    .favorite-modal-view {
+        width: 100%;
+        height: 100%;
+        @include displayFlex-style;
+        gap: 2rem;
+
+        .items-number-remove {
+            @include remove-items-text-style;
+        }
+
+        .favorite-summary {
+            @include items-summary;
+
+            .favorite-product-info {
+                display: $displayGrid;
+                grid-template-columns: auto 2rem;
+                justify-content: space-between;
+                align-items: $alignItems-center;
+
+                .cart-product-name {
+                    display: $displayGrid;
+                    grid-template-rows: 1fr 1fr;
+
+                    .product-name {
+                        @include paragraph;
+                        font-style: normal;
+                        font-weight: 700;
+                        margin: 0;
+                    }
+
+                    .product-price {
+                        @include paragraph;
+                        font-size: 0.875rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        margin: 0;
+                        opacity: 0.5;
+                    }
+                }
+
+                .trash {
+                    justify-self: flex-end;
+
+                    svg {
+                        fill: $colorOrangeBright;
+
+                    }
+
+                    &:hover {
+                        animation: trash-animation 500ms ease-in-out forwards;
+                    }
+                }
+            }
+        }
+    }
+
+    @include devices(tablet) {
+        min-width: unset;
+        width: 50%;
+        top: -16rem;
+        left: 18rem;
+    }
+
+    @include devices(laptop) {
+        min-width: unset;
+        top: -16rem;
+        left: 36rem;
+
+        .favorite-modal-view {
+            .favorite-summary {
+                .favorite-product-info {
+                    .trash {
+                        transform: scale(0.8);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes trash-animation {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, -50%);
+    }
+
+    100% {
+        transform: translate(0, 0);
     }
 }
