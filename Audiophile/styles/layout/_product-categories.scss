@@ -1,0 +1,9 @@
+.products-section {
+    width: 100%;
+    height: 100%;
+    background-color: $colorWhiteFaded;
+
+    .products {
+        @include product-categories-style;
+    }
+}

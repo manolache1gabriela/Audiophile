@@ -1,0 +1,360 @@
+@mixin buttons {
+    width: $buttonsWidth;
+    height: $buttonsHeight;
+    flex-shrink: $flexShrink;
+    display: $displayFlex;
+    justify-content: $justifyContent-center;
+    align-content: $alignItems-center;
+
+}
+
+@mixin products {
+    .button-outline {
+        p {
+            color: $colorOrangeBright;
+        }
+    }
+}
+
+@mixin navbar {
+
+    .navbar-pages {
+        width: 100%;
+        background-color: $colorBlackIntense;
+        height: 5.63rem;
+        display: $displayFlex;
+        align-items: $alignItems-center;
+        justify-content: $justifyContent-center;
+        position: relative;
+        z-index: 1;
+        padding: 0 0.625rem;
+
+        .navbar-menu {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.104);
+            height: 100%;
+            width: 100%;
+            display: $displayFlex;
+            align-items: $alignItems-center;
+            justify-content: space-between;
+            gap: 0.625rem;
+            padding: 0 0.625rem;
+
+
+            .logo {
+                justify-self: center;
+                width: fit-content;
+                display: $displayFlex;
+                align-items: $alignItems-center;
+                justify-content: $justifyContent-center;
+            }
+
+            .favorite_cart {
+                display: $displayFlex;
+                gap: 0.8rem;
+            }
+
+            .access-pages {
+
+                display: none;
+
+                .home-links {
+                    display: $displayFlex;
+                    flex-direction: row;
+                    align-items: $alignItems-center;
+                    justify-content: $justifyContent-center;
+                    gap: 2.2rem;
+
+                    .sub-title {
+                        @include subTitle;
+                        color: $colorWhiteBright;
+                        margin: 0;
+
+                        &:hover {
+                            color: $colorOrangeBright;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include devices(tablet) {
+            .navbar-menu {
+                gap: 2rem;
+                // justify-content: flex-start;
+
+                .logo {
+                    flex: auto;
+                    justify-content: flex-start;
+                }
+            }
+        }
+
+        @include devices(laptop) {
+
+            .navbar-menu {
+                width: 90%;
+
+                .menu {
+                    display: none;
+                }
+
+                .logo {
+                    flex: unset;
+                }
+
+                .access-pages {
+                    display: block;
+
+                    width: 100%;
+
+                }
+            }
+        }
+    }
+}
+
+
+@mixin product-categories-button {
+    align-items: $alignItems-center;
+    display: $displayFlex;
+    flex-direction: column;
+    position: relative;
+
+    img {
+        width: 50%;
+        position: absolute;
+    }
+}
+
+@mixin bg-images {
+    background-position: center;
+    background-repeat: $bgRepeat;
+    background-size: $bg-size;
+    border-radius: $borderRadius;
+}
+
+@mixin displayFlex-style {
+    display: $displayFlex;
+    justify-content: $justifyContent-center;
+    align-items: $alignItems-center;
+    flex-direction: column;
+}
+
+@mixin section-style {
+    padding: 1.5rem 0;
+    width: 100%;
+    display: $displayFlex;
+    align-items: $alignItems-center;
+    justify-content: $justifyContent-center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@mixin wrong {
+    @include paragraph;
+    font-size: 0.75rem;
+    text-align: right;
+    color: #CD2C2C;
+}
+
+@mixin cart-products-style {
+    width: 100%;
+    height: 4rem;
+    display: $displayGrid;
+    grid-template-columns: 4rem auto;
+    align-items: $alignItems-center;
+    gap: 1rem;
+
+    .cart-product-img {
+        width: 4rem;
+        height: 4rem;
+        // background-image: url(../../images/home-page-images/image-xx99-mark-two-headphones-cart.jpg);
+        @include bg-images;
+    }
+
+    .cart-product-info {
+        display: $displayGrid;
+        grid-template-columns: auto 2rem;
+        gap: 1rem;
+
+        .cart-product-name {
+            display: $displayGrid;
+            grid-template-rows: 1fr 1fr;
+
+            .product-name {
+                @include paragraph;
+                font-style: normal;
+                font-weight: 700;
+                margin: 0;
+            }
+
+            .product-price {
+                @include paragraph;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 700;
+                margin: 0;
+                opacity: 0.5;
+            }
+        }
+
+        .number-of-items {
+            text-align: center;
+            @include paragraph;
+            font-weight: 700;
+            margin: 0;
+            opacity: 0.5;
+        }
+    }
+}
+
+@mixin product-categories-style {
+    width: 100%;
+    height: 100%;
+    @include displayFlex-style;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 5rem 0;
+
+    .category-link {
+        width: 100%;
+        @include displayFlex-style;
+        flex-direction: column;
+
+        .gray-div {
+            width: 90%;
+            max-width: 20.4rem;
+            height: 10.3125rem;
+            background-color: $colorWhiteGray;
+            border-radius: $borderRadius;
+            display: $displayFlex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: $alignItems-center;
+            padding: 1.5rem;
+            position: relative;
+
+            .prod-category-img {
+                width: 60%;
+                position: absolute;
+                top: -5rem;
+            }
+
+            .product-category-title {
+                width: 100%;
+                @include displayFlex-style;
+                flex-direction: column;
+                gap: 1rem;
+
+                .prod-type {
+                    @include h6;
+                    margin: 0;
+                    font-size: 0.938rem;
+                }
+            }
+        }
+    }
+
+    @include devices(tablet) {
+        flex-direction: row;
+        gap: 1rem;
+        width: 90%;
+        padding: 3rem 0;
+
+        .category-link {
+            .gray-div {
+                .prod-category-img {
+                    top: -3rem;
+                }
+            }
+        }
+    }
+
+    @include devices(laptop) {
+        padding: 5rem 0;
+
+        .category-link {
+            .gray-div {
+                .prod-category-img {
+                    top: -4rem;
+                }
+            }
+        }
+    }
+}
+
+@mixin remove-items-text-style {
+    width: 100%;
+    @include displayFlex-style;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .items-number {
+        @include h6;
+    }
+
+    .remove {
+        @include paragraph;
+        opacity: 0.5;
+        text-decoration-line: underline;
+    }
+}
+
+
+@mixin items-summary {
+    width: 100%;
+    max-height: 8.5rem;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cart-item {
+        width: 100%;
+        @include cart-products-style;
+        gap: 0.5rem;
+
+        .cart-product-info {
+            grid-template-columns: auto 6rem;
+            justify-content: space-between;
+            align-items: $alignItems-center;
+            gap: 0.75rem;
+
+            .quantity {
+                width: 6rem;
+                height: 2rem;
+            }
+        }
+    }
+}
+
+
+
+@mixin devices($breakpoint) {
+
+    @if $breakpoint ==tablet {
+        @media (min-width: 481px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==laptop {
+        @media (min-width: 769px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==desktop {
+        @media (min-width: 1025px) {
+            @content;
+        }
+    }
+
+
+    @if $breakpoint ==large-desktop {
+        @media (min-width: 1201px) {
+            @content;
+        }
+    }
+}

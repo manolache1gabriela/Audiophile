@@ -1,0 +1,180 @@
+.footer-section {
+    width: 100%;
+
+    .footer {
+        width: 100%;
+        min-height: 100vh;
+        background-color: $colorBlackIntense;
+        position: relative;
+        padding: 3rem 0;
+
+        .notch {
+            background-color: $colorOrangeBright;
+            width: 6.3125rem;
+            height: 0.25rem;
+            position: absolute;
+            top: 0;
+        }
+
+        .footer-content {
+            width: 100%;
+            background-color: $colorBlackIntense;
+            display: $displayFlex;
+            flex-direction: column;
+            align-items: $alignItems-center;
+            position: relative;
+            margin: 0;
+            gap: 2.5rem;
+
+            .access {
+                display: $displayFlex;
+                flex-direction: column;
+                align-items: $alignItems-center;
+                justify-content: $justifyContent-center;
+                gap: 1rem;
+
+                p {
+                    @include subTitle;
+                    color: $colorWhiteBright;
+                    margin: 0;
+
+                    &:hover {
+                        color: $colorOrangeBright;
+                    }
+                }
+            }
+
+
+            .footer-about-copyright {
+                display: $displayFlex;
+                flex-direction: column;
+                align-items: $alignItems-center;
+                justify-content: $justifyContent-center;
+                gap: 2.5rem;
+
+                .paragraph-footer {
+                    width: 80%;
+                    @include paragraph;
+                    color: $colorWhiteBright;
+                    opacity: 0.5;
+                    text-align: $textAlign-center;
+                    margin: 0;
+                }
+
+                .paragraph-copyright {
+                    @include paragraph;
+                    width: 80%;
+                    color: $colorWhiteBright;
+                    opacity: 0.5;
+                    text-align: $textAlign-center;
+                    margin: 0;
+                }
+
+                .contact {
+                    display: $displayFlex;
+                    width: 6.5rem;
+                    align-items: $alignItems-center;
+                    justify-content: space-between;
+
+                    a {
+                        svg:hover {
+                            path {
+                                fill: $colorOrangeBright;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    @include devices(tablet) {
+        .footer {
+            min-height: unset;
+            align-items: flex-start;
+            padding: 3rem 2.5rem;
+
+            .notch {
+                left: 2.5rem;
+            }
+
+            .footer-content {
+                align-items: flex-start;
+
+                .access {
+                    flex-direction: row;
+                }
+
+                .footer-about-copyright {
+                    display: $displayGrid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+
+                    .paragraph-footer {
+                        grid-column: 1/3;
+                        grid-row: 1/2;
+                        width: 100%;
+                        text-align: justify;
+                    }
+
+                    .paragraph-copyright {
+                        grid-column: 1/2;
+                        grid-row: 2/3;
+                        text-align: left;
+                    }
+
+                    .contact {
+                        grid-column: 2/3;
+                        grid-row: 2/3;
+                        justify-self: end;
+                    }
+                }
+            }
+        }
+    }
+
+    @include devices(laptop) {
+        .footer {
+            .footer-content {
+                display: $displayGrid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 10% auto;
+
+                .logo {
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                }
+
+                .access {
+                    grid-column: 2/3;
+                    grid-row: 1/2;
+                    justify-content: flex-end;
+                }
+
+                .footer-about-copyright {
+                    grid-column: 1/3;
+                    grid-row: 2/3;
+                    gap: 3rem;
+                    grid-template-rows: 1.5fr 1fr;
+
+                    .paragraph-footer {
+                        grid-column: 1/2;
+                        grid-row: 1/2;
+                        text-align: left;
+                    }
+
+                    .paragraph-copyright {
+                        grid-column: 1/2;
+                        grid-row: 2/3;
+                    }
+
+                    .contact {
+                        grid-column: 2/3;
+                        grid-row: 1/3;
+                    }
+                }
+            }
+        }
+    }
+}

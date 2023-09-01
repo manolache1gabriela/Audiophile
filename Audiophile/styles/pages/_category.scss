@@ -1,0 +1,40 @@
+.navbar-categories {
+    @include navbar;
+    background-color: $colorBlackIntense;
+
+    .category-name {
+        width: 100%;
+        height: 5.63rem;
+        background-color: $colorBlackIntense;
+        display: $displayFlex;
+        justify-content: $justifyContent-center;
+        align-items: $alignItems-center;
+
+        .category-nametag {
+            @include h2;
+            color: $colorWhiteBright;
+            font-size: 1.75rem;
+            margin: 0;
+            width: 100%;
+            text-align: $textAlign-center;
+        }
+    }
+
+    @include devices(tablet) {
+        .category-name {
+            .category-nametag {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+.products-by-type {
+    width: 100%;
+    display: $displayFlex;
+    flex-direction: column;
+    justify-content: $justifyContent-center;
+    align-items: $alignItems-center;
+    padding: 3rem 0;
+    background-color: $colorWhiteFaded;
+}
