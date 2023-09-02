@@ -30,7 +30,7 @@
         padding: 0 0.625rem;
 
         .navbar-menu {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.104);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             height: 100%;
             width: 100%;
             display: $displayFlex;
@@ -80,7 +80,6 @@
         @include devices(tablet) {
             .navbar-menu {
                 gap: 2rem;
-                // justify-content: flex-start;
 
                 .logo {
                     flex: auto;
@@ -168,7 +167,7 @@
     .cart-product-img {
         width: 4rem;
         height: 4rem;
-        // background-image: url(../../images/home-page-images/image-xx99-mark-two-headphones-cart.jpg);
+        background-image: url(#{$absolutePath}/cart/image-xx99-mark-two-headphones.jpg);
         @include bg-images;
     }
 

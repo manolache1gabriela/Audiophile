@@ -7,7 +7,7 @@ export default function NavigationBar() {
             <div className="navbar-pages">
                 <div className="navbar-menu">
                     <div className="menu">
-                        <img src="../images/home-page-images/menu.svg" alt="" />
+                        <img src="/assets/shared/tablet/icon-hamburger.svg" alt="" />
                     </div>
                     <div className="logo">
                         <NavLink to='/' exact='true'>
@@ -33,8 +33,8 @@ export default function NavigationBar() {
                         </div>
                     </div>
                     <div className="favorite_cart">
-                        <img id="favorite-icon" src="../images/home-page-images/heart-regular.svg" alt="favorite items" />
-                        <img id="cart-icon" src="../images/home-page-images/cart.svg" alt="cart items" />
+                        <img id="favorite-icon" src='/assets/shared/desktop/heart-regular.svg' alt="favorite items" />
+                        <img id="cart-icon" src="/assets/shared/desktop/icon-cart.svg" alt="cart items" />
                     </div>
                 </div>
             </div>

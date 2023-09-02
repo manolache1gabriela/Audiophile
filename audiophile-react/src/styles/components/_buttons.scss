@@ -50,6 +50,8 @@
 .button-special-product {
     @include buttons;
     background-color: $colorBlackIntense;
+    position: relative;
+    z-index: auto;
 
     p {
         @include subTitle;
@@ -59,7 +61,28 @@
     &:hover {
         background-color: #4C4C4C;
     }
+}
 
+.back-button {
+    width: 5rem;
+    outline: 0px;
+    border: 0;
+    text-align: left;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    .back {
+        @include paragraph;
+        color: #797979;
+        margin: 0;
+    }
+
+    &:hover {
+        .back {
+            color: $colorOrangeBright;
+        }
+    }
 }
 
 .quantity {

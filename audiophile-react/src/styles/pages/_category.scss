@@ -37,4 +37,8 @@
     align-items: $alignItems-center;
     padding: 3rem 0;
     background-color: $colorWhiteFaded;
+
+    @include devices(laptop) {
+        padding: 5rem 0;
+    }
 }

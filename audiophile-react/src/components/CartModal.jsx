@@ -29,7 +29,7 @@ export default function CartModal() {
                     <span className="total-amount">$ 5,396</span>
                 </section>
                 <span className="no-items">No items in cart</span>
-                <a href="#">
+                <a href="/checkout">
                     <div className="button-primary">
                         <p className="sub-title">checkout</p>
                     </div>

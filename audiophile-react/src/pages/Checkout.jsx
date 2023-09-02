@@ -1,11 +1,13 @@
 import React from 'react'
+import ConfirmationModal from '../components/ConfirmationModal'
+import BackButton from '../components/BackButton'
 
 export default function Checkout() {
     return (
         <div>
-            <a href="#">
-                <p className="back from-checkout">Go Back</p>
-            </a>
+            <div className="back-button-section-checkout">
+                <BackButton />
+            </div>
             <section className="checkout-summary">
                 <div className="checkout">
                     <h3 className="checkout-title">CHECKOUT</h3>
@@ -103,7 +105,7 @@ export default function Checkout() {
                                 <input className="inputs" type="text" required name="card-pin" id="card-pin" placeholder="6891" />
                             </div>
                             <div className="cash-on-delivery-information cash-chose">
-                                <img src="../images/home-page-images/icon-cash-on-delivery.svg" alt="cash on delivery icon" />
+                                <img src="/assets/checkout/icon-cash-on-delivery.svg" alt="cash on delivery icon" />
                                 <p className="cash-on-delivery-info">
                                     The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
                                 </p>
@@ -150,43 +152,7 @@ export default function Checkout() {
                     <input className="button-primary submit-btn" type="submit" value="CONTINUE & PAY" />
                 </div>
             </section>
-            <dialog id="thanks-modal">
-                <div className="dialog-visual">
-                    <section className="confirmation">
-                        <img src="../images/home-page-images/icon-order-confirmation.svg" alt="confirmation icon" />
-                        <h3 className="confirm-title">THANK YOU <br /> FOR YOUR ORDER</h3>
-                        <p className="confirm-text">You will receive an email confirmation shortly.</p>
-                    </section>
-                    <section className="confirm-summary">
-                        <div className="summary">
-                            <div className="cart-items">
-                                <div className="cart-item">
-                                    <div className="cart-product-img"></div>
-                                    <div className="cart-product-info">
-                                        <div className="cart-product-name">
-                                            <p className="product-name">XX99 MK II</p>
-                                            <p className="product-price">$ 2,999</p>
-                                        </div>
-                                        <span className="number-of-items">x1</span>
-                                    </div>
-                                </div>
-                                <div className="others-from-cart">
-                                    <button className="view-others">
-                                        <span className="view-text">and 2 other item(s)</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="grand-total">
-                                <span className="grand-title">GRAND TOTAL</span>
-                                <span className="grand-amount">$ 5,446</span>
-                            </div>
-                        </div>
-                    </section>
-                    <div className="button-primary">
-                        <p className="sub-title">BACK TO HOME</p>
-                    </div>
-                </div>
-            </dialog>
+            <ConfirmationModal />
         </div>
     )
 }

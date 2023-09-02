@@ -1,5 +1,7 @@
 import React from 'react'
 
+// style="background-image: ${product.image['mobile']}"
+
 export default function ProductOfType() {
     return (
         <div className="product-of-type">

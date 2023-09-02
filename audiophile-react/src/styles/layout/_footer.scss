@@ -7,6 +7,8 @@
         background-color: $colorBlackIntense;
         position: relative;
         padding: 3rem 0;
+        display: $displayFlex;
+        justify-content: center;
 
         .notch {
             background-color: $colorOrangeBright;

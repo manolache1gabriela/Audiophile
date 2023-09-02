@@ -1,8 +1,9 @@
 .home {
     width: 100%;
-    height: $heightDisplay;
-    // background-image: url(../../images/home-page-images/image-header.jpg);
+    height: 90vh;
+    background-image: url(#{$absolutePath}/home/mobile/image-header.jpg);
     @include bg-images;
+    background-position: bottom;
     border-radius: 0;
     display: $displayFlex;
     flex-direction: column;
@@ -11,8 +12,8 @@
     .darken {
         position: absolute;
         width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
+        height: 90vh;
+        background-color: rgba(0, 0, 0, 0.7);
     }
 
     .new-product {
@@ -24,7 +25,6 @@
         text-align: $textAlign-center;
         justify-content: center;
         height: 100%;
-        width: 100%;
         gap: 1.5rem;
         padding-bottom: 30%;
 
@@ -56,7 +56,7 @@
     }
 
     @include devices(tablet) {
-        // background-image: url(../../images/home-page-images/image-header-tablet.jpg);
+        background-image: url(#{$absolutePath}/home/tablet/image-header.jpg);
 
         .new-product {
             padding: 0;
@@ -74,7 +74,8 @@
 
     @include devices(laptop) {
         @include displayFlex-style;
-        // background-image: url(../../images/home-page-images/image-hero-desktop.jpg);
+        justify-content: flex-start;
+        background-image: url(#{$absolutePath}/home/desktop/image-hero.jpg);
 
         .new-product {
             align-self: flex-start;
@@ -172,7 +173,8 @@
             width: 90%;
             height: 20rem;
             border-radius: $borderRadius;
-            // background-image: url(../../images/home-page-images/image-speaker-zx7-mobile.jpg);
+            background-image: url(#{$absolutePath}/home/mobile/image-speaker-zx7.jpg);
+            filter: brightness(70%);
             @include bg-images;
             display: $displayFlex;
             align-items: $alignItems-center;
@@ -202,7 +204,7 @@
             .earphones-image {
                 width: 100%;
                 height: 12.5rem;
-                // background-image: url(../../images/home-page-images/image-earphones-yx1.jpg);
+                background-image: url(#{$absolutePath}/home/mobile/image-earphones-yx1.jpg);
                 @include bg-images;
             }
 
@@ -263,8 +265,7 @@
             }
 
             .normal-product-card {
-                // background-image: url(../../images/home-page-images/image-speaker-zx7-tablet.jpg);
-                filter: brightness(80%);
+                background-image: url(#{$absolutePath}/home/tablet/image-speaker-zx7.jpg);
 
                 .normal-product-card-info {
                     padding-left: 4rem;
@@ -281,7 +282,7 @@
 
                 .earphones-image {
                     height: 20rem;
-                    // background-image: url(../../images/home-page-images/image-earphones-yx1-tablet.jpg);
+                    background-image: url(#{$absolutePath}/home/tablet/image-earphones-yx1.jpg);
                     filter: brightness(80%);
                 }
 
@@ -313,10 +314,10 @@
                     }
 
                     .speaker-img {
-                        width: 50%;
+                        width: 40%;
                         max-width: 23rem;
                         top: 22%;
-                        left: 6.5%;
+                        left: 7.5%;
                     }
                 }
 
@@ -334,11 +335,23 @@
             }
 
             .normal-product-card {
-                // background-image: url(../../images/home-page-images/image-speaker-zx7-desktop.jpg);
+                background-image: url(#{$absolutePath}/home/desktop/image-speaker-zx7.jpg);
             }
 
             .product-card-split {
                 gap: 2rem;
+            }
+        }
+    }
+
+    @include devices(desktop) {
+        .best-products {
+            .special-product-card {
+                .special-product-card-images {
+                    .speaker-img {
+                        left: 17.5%;
+                    }
+                }
             }
         }
     }

@@ -1,0 +1,16 @@
+.no-match {
+    @include displayFlex-style;
+    color: $colorOrangeBright;
+    text-align: center;
+    font-size: 2rem;
+    height: 40vh;
+
+    @include devices(tablet) {
+        font-size: 3rem;
+    }
+
+    @include devices(laptop) {
+        font-size: 4rem;
+        height: 50vh;
+    }
+}

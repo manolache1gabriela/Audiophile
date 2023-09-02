@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="notch"></div>
                 <div className="footer-content">
                     <NavLink to='/'>
-                        <img src="../images/home-page-images/logo.svg" alt="Logo" className="logo" />
+                        <img src="/assets/shared/desktop/logo.svg" alt="Logo" className="logo" />
                     </NavLink>
                     <div className="access">
                         <NavLink to='/'>

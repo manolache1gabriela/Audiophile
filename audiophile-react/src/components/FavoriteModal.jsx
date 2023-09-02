@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function FavoriteModal() {
+
+    useEffect(() => {
+        document.getElementById('favorite-modal').showModal();
+    }, [])
+
     return (
         <dialog id="favorite-modal">
             <div className="favorite-modal-view">

@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function NoMatch() {
     return (
-        <div>No Match found</div>
+        <div className='no-match'>No Match Found</div>
     )
 }

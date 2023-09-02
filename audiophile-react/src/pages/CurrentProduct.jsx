@@ -1,16 +1,17 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import ProductCategories from '../components/ProductCategories';
 import About from '../components/About';
 import OtherProduct from '../components/OtherProduct';
+import BackButton from '../components/BackButton';
 // let data = data.filter((item) => item.category===params.id)
 export default function CurrentProduct() {
-    const params = useParams();
+    // const params = useParams();
     return (
         <div>
-            <a href="#">
-                <p className="back">Go Back</p>
-            </a>
+            <div className="back-button-section-product">
+                <BackButton />
+            </div>
             <section className="chosen-product">
                 <div className="product-chosen">
                     <div className="product-image"></div>
@@ -70,10 +71,10 @@ export default function CurrentProduct() {
                     <div className="card-singular"></div>
                 </div>
             </section>
-            <section class="other-products">
-                <div class="also-want">
-                    <h3 class="also-like-title">you may also like</h3>
-                    <div class="other-products-list">
+            <section className="other-products">
+                <div className="also-want">
+                    <h3 className="also-like-title">you may also like</h3>
+                    <div className="other-products-list">
                         <OtherProduct />
                     </div>
                 </div>

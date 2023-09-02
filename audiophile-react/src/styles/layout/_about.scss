@@ -12,7 +12,7 @@
     .img-about {
         width: 90%;
         height: 18.8rem;
-        // background-image: url(../../images/home-page-images/image-best-gear.jpg);
+        background-image: url(#{$absolutePath}/shared/mobile/image-best-gear.jpg);
         @include bg-images;
     }
 
@@ -52,7 +52,7 @@
         gap: 4rem;
 
         .img-about {
-            // background-image: url(../../images/home-page-images/image-best-gear-tablet.jpg);
+            background-image: url(#{$absolutePath}/shared/tablet/image-best-gear.jpg);
         }
 
         .about-us {
@@ -70,7 +70,7 @@
         padding: 0 5% 5rem;
 
         .img-about {
-            // background-image: url(../../images/home-page-images/image-best-gear-desktop.jpg);
+            background-image: url(#{$absolutePath}/shared/desktop/image-best-gear.jpg);
             height: 36.8rem;
             width: 100%;
         }
