@@ -91,7 +91,7 @@
 .products-section {
     width: 100%;
     @include displayFlex-style;
-    padding: 2rem 0;
+    padding: 3rem 0 2rem;
 }
 
 .best-products-section {
@@ -124,7 +124,7 @@
             flex-direction: column;
             position: relative;
             gap: 5rem;
-            justify-content: end;
+            justify-content: flex-end;
             padding: 2rem 0;
             overflow: hidden;
 

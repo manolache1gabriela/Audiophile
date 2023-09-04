@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
-export default function FavoriteModal() {
-
-    useEffect(() => {
-        document.getElementById('favorite-modal').showModal();
-    }, [])
-
+export default function FavoriteModal({ setOpenModalFavorite }) {
     return (
-        <dialog id="favorite-modal">
+        <div id="favorite-modal"
+            onMouseEnter={() =>
+                setOpenModalFavorite(true)
+            }
+            onMouseLeave={() => {
+                setOpenModalFavorite(false)
+            }}>
             <div className="favorite-modal-view">
                 <section className="items-number-remove">
                     <span className="items-number">favorite (3)</span>
@@ -29,6 +30,6 @@ export default function FavoriteModal() {
                 </section>
                 <span className="no-items">No items in favorites</span>
             </div>
-        </dialog>
+        </div>
     )
 }

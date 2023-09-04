@@ -212,23 +212,23 @@
     height: 100%;
     @include displayFlex-style;
     flex-direction: column;
-    gap: 5rem;
+    gap: 6rem;
     padding: 5rem 0;
 
     .category-link {
-        width: 100%;
+        width: 90%;
         @include displayFlex-style;
         flex-direction: column;
 
         .gray-div {
-            width: 90%;
+            width: 100%;
             max-width: 20.4rem;
             height: 10.3125rem;
             background-color: $colorWhiteGray;
             border-radius: $borderRadius;
             display: $displayFlex;
             flex-direction: column;
-            justify-content: end;
+            justify-content: flex-end;
             align-items: $alignItems-center;
             padding: 1.5rem;
             position: relative;
@@ -258,7 +258,7 @@
         flex-direction: row;
         gap: 1rem;
         width: 90%;
-        padding: 3rem 0;
+        padding: 3rem 0 0;
 
         .category-link {
             .gray-div {
@@ -271,11 +271,13 @@
 
     @include devices(laptop) {
         padding: 5rem 0;
+    }
 
+    @include devices(desktop) {
         .category-link {
             .gray-div {
                 .prod-category-img {
-                    top: -4rem;
+                    top: -5rem;
                 }
             }
         }

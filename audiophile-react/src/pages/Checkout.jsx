@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ConfirmationModal from '../components/ConfirmationModal'
 import BackButton from '../components/BackButton'
 
 export default function Checkout() {
+    const [openModalConfirmation, setOpenModalConfirmation] = useState(false);
+
     return (
         <div>
             <div className="back-button-section-checkout">
@@ -149,10 +151,14 @@ export default function Checkout() {
                             </li>
                         </ul>
                     </div>
-                    <input className="button-primary submit-btn" type="submit" value="CONTINUE & PAY" />
+                    <input onClick={() => {
+                        setOpenModalConfirmation(true);
+                        document.querySelector('body').classList.add('body-overflow')
+                    }} className="button-primary submit-btn" type="submit" value="CONTINUE & PAY" />
                 </div>
             </section>
-            <ConfirmationModal />
+
+            {openModalConfirmation && <ConfirmationModal openModalConfirmation={openModalConfirmation} setOpenModalConfirmation={setOpenModalConfirmation} />}
         </div>
     )
 }

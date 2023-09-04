@@ -1,5 +1,4 @@
 import React from 'react'
-// import NavigationBar from '../components/NavigationBar'
 import About from '../components/About'
 // import Footer from '../components/Footer'
 import ProductCategories from '../components/ProductCategories'

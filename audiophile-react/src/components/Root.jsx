@@ -7,9 +7,7 @@ import Checkout from '../pages/Checkout';
 import ProductsByCategory from '../pages/ProductsByCategory';
 import NoMatch from './NoMatch';
 import CurrentProduct from '../pages/CurrentProduct';
-import MenuModal from './MenuModal';
-import CartModal from './CartModal';
-import FavoriteModal from './FavoriteModal';
+
 
 export default function Root() {
     const routes = [
@@ -19,6 +17,8 @@ export default function Root() {
         { path: '/category/:id', name: 'Category Name', Component: ProductsByCategory, exact: false },
         { path: '*', name: 'No match', Component: NoMatch, exact: false },
     ]
+
+
 
     return (
         <Router>
@@ -33,9 +33,6 @@ export default function Root() {
                         </Routes>
                     </div>
                     <Footer />
-                    <MenuModal />
-                    <CartModal />
-                    <FavoriteModal />
                 </div>
             </Fragment>
         </Router>

@@ -1,15 +1,14 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
-export default function ProductCategoryLink() {
+export default function ProductCategoryLink({ category }) {
     return (
-        <NavLink to='/category/headphones' className="category-link">
+        <a href={category.link} className="category-link">
             <div className="gray-div">
                 <div className="prod-category-img">
-                    <img src="/assets/shared/desktop/image-category-thumbnail-headphones.png" alt="category headphones" />
+                    <img src={category.imageSrc} alt={category.imageAlt} />
                 </div>
                 <div className="product-category-title">
-                    <h6 className="prod-type">HEADPHONES</h6>
+                    <h6 className="prod-type">{category.title}</h6>
                     <div className="button-outline">
                         <p className="sub-title">Shop</p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
@@ -18,6 +17,6 @@ export default function ProductCategoryLink() {
                     </div>
                 </div>
             </div>
-        </NavLink>
+        </a>
     )
 }

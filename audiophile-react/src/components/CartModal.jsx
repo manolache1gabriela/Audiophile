@@ -1,8 +1,15 @@
 import React from 'react'
 
-export default function CartModal() {
+export default function CartModal({ setOpenModalCart }) {
     return (
-        <dialog id="cart-modal">
+        <div id="cart-modal"
+            onMouseEnter={() => {
+                setOpenModalCart(true)
+            }}
+            onMouseLeave={() => {
+                setOpenModalCart(false)
+            }}
+        >
             <div className="cart-modal-view">
                 <section className="items-number-remove">
                     <span className="items-number">cart (3)</span>
@@ -35,6 +42,6 @@ export default function CartModal() {
                     </div>
                 </a>
             </div>
-        </dialog>
+        </div>
     )
 }
