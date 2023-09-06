@@ -73,6 +73,7 @@
     text-align: $textAlign-center;
 
     .subtract {
+        cursor: pointer;
         width: 100%;
         height: 100%;
         color: $colorBlackIntense;
@@ -80,8 +81,8 @@
         align-items: $alignItems-center;
         justify-content: $justifyContent-center;
 
-        &:hover {
-            color: $colorOrangeBright
+        svg:hover {
+            fill: $colorOrangeBright;
         }
     }
 
@@ -95,6 +96,7 @@
     }
 
     .add {
+        cursor: pointer;
         width: 100%;
         height: 100%;
         display: $displayFlex;
@@ -102,8 +104,8 @@
         justify-content: $justifyContent-center;
         color: $colorBlackIntense;
 
-        &:hover {
-            color: $colorOrangeBright
+        svg {
+            fill: $colorOrangeBright;
         }
     }
 }

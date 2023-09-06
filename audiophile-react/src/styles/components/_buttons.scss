@@ -100,6 +100,7 @@
     text-align: $textAlign-center;
 
     .subtract {
+        cursor: pointer;
         width: 100%;
         height: 100%;
         color: $colorBlackIntense;
@@ -108,7 +109,7 @@
         justify-content: $justifyContent-center;
 
         &:hover {
-            color: $colorOrangeBright
+            color: $colorOrangeBright;
         }
     }
 
@@ -122,6 +123,7 @@
     }
 
     .add {
+        cursor: pointer;
         width: 100%;
         height: 100%;
         display: $displayFlex;

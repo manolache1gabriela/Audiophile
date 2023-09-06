@@ -12,7 +12,7 @@ export default function Home() {
                     <p className="overline">NEW PRODUCT</p>
                     <h1 className="product-title">XX99 Mark II HeadphoneS</h1>
                     <p className="paragraph">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-                    <a href="/product/id">
+                    <a href="product/xx99-mark-two-headphones">
                         <div className="button-primary">
                             <p className="sub-title">See Product</p>
                         </div>
@@ -32,7 +32,7 @@ export default function Home() {
                         <div className="special-product-card-info">
                             <h1 className="product-title">ZX9 SPEAKER</h1>
                             <p className="paragraph">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                            <a href="/product/id">
+                            <a href="/product/zx9-speaker">
                                 <div className="button-special-product">
                                     <p className="sub-title">See Product</p>
                                 </div>
@@ -42,7 +42,7 @@ export default function Home() {
                     <div className="normal-product-card">
                         <div className="normal-product-card-info">
                             <h1 className="product-title">ZX7 SPEAKER</h1>
-                            <a href="/product/id">
+                            <a href="/product/zx7-speaker">
                                 <div className="button-secondary">
                                     <p className="sub-title">See Product</p>
                                 </div>
@@ -53,7 +53,7 @@ export default function Home() {
                         <div className="earphones-image"></div>
                         <div className="product-card-split-info">
                             <h1 className="product-title">YX1 EARPHONES</h1>
-                            <a href="/product/id">
+                            <a href="/product/yx1-earphones">
                                 <div className="button-secondary">
                                     <p className="sub-title">See Product</p>
                                 </div>

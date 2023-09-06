@@ -7,6 +7,8 @@ import Checkout from '../pages/Checkout';
 import ProductsByCategory from '../pages/ProductsByCategory';
 import NoMatch from './NoMatch';
 import CurrentProduct from '../pages/CurrentProduct';
+import { MyProductsData } from '../context/ProductsContext';
+import data from '../data.json';
 
 
 export default function Root() {
@@ -18,23 +20,23 @@ export default function Root() {
         { path: '*', name: 'No match', Component: NoMatch, exact: false },
     ]
 
-
-
     return (
-        <Router>
-            <Fragment>
-                <div className="app-container">
-                    <NavigationBar />
-                    <div className="content">
-                        <Routes>
-                            {routes.map(({ path, Component, exact }) => (
-                                <Route key={path} path={path} exact={exact.toString()} element={<Component />}></Route>
-                            ))}
-                        </Routes>
+        <MyProductsData.Provider value={data}>
+            <Router>
+                <Fragment>
+                    <div className="app-container">
+                        <NavigationBar />
+                        <div className="content">
+                            <Routes>
+                                {routes.map(({ path, Component, exact }) => (
+                                    <Route key={path} path={path} exact={exact.toString()} element={<Component />}></Route>
+                                ))}
+                            </Routes>
+                        </div>
+                        <Footer />
                     </div>
-                    <Footer />
-                </div>
-            </Fragment>
-        </Router>
+                </Fragment>
+            </Router>
+        </MyProductsData.Provider>
     )
 }

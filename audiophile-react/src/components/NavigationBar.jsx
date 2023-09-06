@@ -9,6 +9,7 @@ export default function NavigationBar() {
     const [openModalCart, setOpenModalCart] = useState(false);
     const [openModalMenu, setOpenModalMenu] = useState(false);
 
+
     return (
         <div>
             <section className="navbar">

@@ -1,10 +1,13 @@
 .product-of-type {
     width: 90%;
     display: $displayFlex;
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: $justifyContent-center;
     align-items: $alignItems-center;
     gap: 1rem;
+
+    flex-direction: column;
+
 
 
     .product-image {
@@ -65,6 +68,10 @@
     @include devices(laptop) {
         flex-direction: row;
         gap: 7rem;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
 
         .product-image {
             background-image: url(#{$absolutePath}/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg);
