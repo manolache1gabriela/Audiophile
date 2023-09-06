@@ -136,6 +136,7 @@ a {
   display: flex;
   justify-content: center;
   align-content: center;
+  cursor: pointer;
   background-color: #D87D4A;
 }
 .button-primary:hover {
@@ -158,6 +159,7 @@ a {
   display: flex;
   justify-content: center;
   align-content: center;
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid #000;
 }
@@ -197,6 +199,7 @@ a {
   display: flex;
   justify-content: center;
   align-content: center;
+  cursor: pointer;
   background-color: #000;
   position: relative;
   z-index: auto;
@@ -263,6 +266,12 @@ a {
   align-items: center;
   justify-content: center;
 }
+.quantity .subtract::-moz-selection {
+  background-color: transparent;
+}
+.quantity .subtract::selection {
+  background-color: transparent;
+}
 .quantity .subtract:hover {
   color: #D87D4A;
 }
@@ -282,6 +291,12 @@ a {
   align-items: center;
   justify-content: center;
   color: #000;
+}
+.quantity .add::-moz-selection {
+  background-color: transparent;
+}
+.quantity .add::selection {
+  background-color: transparent;
 }
 .quantity .add:hover {
   color: #D87D4A;
@@ -2054,6 +2069,7 @@ body::-webkit-scrollbar {
   margin: 0;
 }
 .chosen-product .product-chosen .price-cart-adding .price-favorite .favorite-svg {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;

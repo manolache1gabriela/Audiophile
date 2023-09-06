@@ -76,6 +76,7 @@
                 }
 
                 .favorite-svg {
+                    cursor: pointer;
                     @include displayFlex-style;
                     flex-direction: row;
                     padding-left: 5rem;

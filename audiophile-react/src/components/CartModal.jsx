@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import QuantityButton from './QuantityButton'
 
 export default function CartModal({ setOpenModalCart }) {
+    const [itemQuantity, setItemQuantity] = useState(1);
     return (
         <div id="cart-modal"
             onMouseEnter={() => {
@@ -24,9 +26,7 @@ export default function CartModal({ setOpenModalCart }) {
                                 <p className="product-price">$ 2,999</p>
                             </div>
                             <div className="quantity">
-                                <span className="subtract">-</span>
-                                <span className="amount">1</span>
-                                <span className="add">+</span>
+                                <QuantityButton itemQuantity={itemQuantity} setItemQuantity={setItemQuantity} />
                             </div>
                         </div>
                     </div>

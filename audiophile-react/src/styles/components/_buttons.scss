@@ -108,6 +108,10 @@
         align-items: $alignItems-center;
         justify-content: $justifyContent-center;
 
+        &::selection {
+            background-color: transparent;
+        }
+
         &:hover {
             color: $colorOrangeBright;
         }
@@ -130,6 +134,10 @@
         align-items: $alignItems-center;
         justify-content: $justifyContent-center;
         color: $colorBlackIntense;
+
+        &::selection {
+            background-color: transparent;
+        }
 
         &:hover {
             color: $colorOrangeBright
