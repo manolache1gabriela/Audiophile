@@ -21,6 +21,7 @@ export default function CurrentProduct() {
     const others = productChosen[0].others;
     let other = [];
     for (let i = 0; i < others.length; i++) {
+
         other.push(<OtherProduct key={i} others={others[i]} />)
     }
 
