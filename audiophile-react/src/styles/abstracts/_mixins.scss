@@ -186,6 +186,10 @@
                 font-style: normal;
                 font-weight: 700;
                 margin: 0;
+                text-overflow: ellipsis;
+                text-wrap: nowrap;
+                max-width: 7rem;
+                overflow: hidden;
             }
 
             .product-price {
@@ -299,13 +303,14 @@
         @include paragraph;
         opacity: 0.5;
         text-decoration-line: underline;
+        user-select: none;
     }
 }
 
 
 @mixin items-summary {
     width: 100%;
-    max-height: 8.5rem;
+    max-height: 9rem;
     overflow-y: scroll;
 
     &::-webkit-scrollbar {

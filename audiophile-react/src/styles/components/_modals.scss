@@ -231,6 +231,10 @@ body {
 
     .cart-summary {
         @include items-summary;
+        height: 8.5rem;
+        display: $displayFlex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
     .total {
@@ -260,7 +264,7 @@ body {
     @include devices(tablet) {
         max-width: 23rem;
         right: 2%;
-        max-height: 22rem;
+        max-height: fit-content;
         padding: 2rem 1.75rem;
     }
 
@@ -272,7 +276,7 @@ body {
 .no-items {
     @include paragraph;
     font-size: 1.15rem;
-    display: none;
+    // display: none;
 }
 
 .removed {

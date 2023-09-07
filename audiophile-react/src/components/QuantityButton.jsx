@@ -1,17 +1,48 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-export default function QuantityButton({ itemQuantity, setItemQuantity }) {
+export default function QuantityButton({ quantity, isPersistent, productId, innerRef, price, calculateTotal }) {
+    let [itemQuantity, setItemQuantity] = useState(quantity);
 
-
-    function subtract() {
-        if (itemQuantity === 1) {
+    // Function to update the ref value when itemQuantity changes
+    useEffect(() => {
+        if (innerRef === undefined) {
             return
         }
-        setItemQuantity(prevQuantity => prevQuantity - 1);
+        innerRef.current = itemQuantity;
+    }, [itemQuantity, innerRef]);
+
+    function modifyQuantity(newQuantity) {
+        setItemQuantity(newQuantity);
+        if (isPersistent) {
+            saveToLocalStorage(productId, newQuantity);
+        }
+
+        if (calculateTotal !== undefined) {
+            calculateTotal()
+        }
     }
-    function add() {
-        setItemQuantity(prevQuantity => prevQuantity + 1);
+
+    function subtract(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (itemQuantity === 0) {
+            return
+        }
+        modifyQuantity(itemQuantity--);
     }
+
+    function add(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        modifyQuantity(itemQuantity++);
+    }
+
+    function saveToLocalStorage(productId, quantity) {
+        let cart = JSON.parse(localStorage.getItem('cart') ?? '{}');
+        cart[productId] = { quantity: quantity, price: (price * quantity) };
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
 
     return (
         <div className="quantity">

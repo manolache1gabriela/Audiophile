@@ -1,8 +1,34 @@
-import React, { useState } from 'react'
-import QuantityButton from './QuantityButton'
+import React, { useEffect, useState } from 'react'
+import CartItem from './CartItem';
 
 export default function CartModal({ setOpenModalCart }) {
-    const [itemQuantity, setItemQuantity] = useState(1);
+
+    const cart = JSON.parse(localStorage.getItem('cart') ?? '{}');
+    let [cartItems, setCartItems] = useState([])
+    let [totalPrice, setTotalPrice] = useState(0);
+    const calculateTotal = () => {
+        const newCart = JSON.parse(localStorage.getItem('cart') ?? '{}');
+        let values = Object.values(newCart);
+        setTotalPrice(values.reduce((acc, item) => acc + item.price, 50))
+    }
+
+    useEffect(() => {
+        calculateTotal()
+
+        let newCartItems = []
+        for (const [productId, { quantity }] of Object.entries(cart)) {
+            newCartItems.unshift(<CartItem quantity={quantity} productId={productId} key={'product-' + productId} calculateTotal={calculateTotal} />)
+        }
+
+        setCartItems(newCartItems)
+    }, [setOpenModalCart])
+
+    function removeAll() {
+        localStorage.removeItem('cart');
+        setCartItems([])
+        calculateTotal()
+    }
+
     return (
         <div id="cart-modal"
             onMouseEnter={() => {
@@ -14,28 +40,24 @@ export default function CartModal({ setOpenModalCart }) {
         >
             <div className="cart-modal-view">
                 <section className="items-number-remove">
-                    <span className="items-number">cart (3)</span>
-                    <span className="remove">Remove all</span>
+                    <span className="items-number">cart ({cartItems.length})</span>
+                    {cartItems.length > 0 && <span className="remove" onClick={removeAll}>Remove all</span>}
                 </section>
-                <section className="cart-summary ">
-                    <div className="cart-item">
-                        <div className="cart-product-img"></div>
-                        <div className="cart-product-info">
-                            <div className="cart-product-name">
-                                <p className="product-name">XX99 MK II</p>
-                                <p className="product-price">$ 2,999</p>
-                            </div>
-                            <div className="quantity">
-                                <QuantityButton itemQuantity={itemQuantity} setItemQuantity={setItemQuantity} />
-                            </div>
-                        </div>
+                {
+                    cartItems.length > 0 &&
+                    <div>
+                        <section className="cart-summary ">
+                            {cartItems}
+                        </section>
+                        <section className="total ">
+                            <span className="total-text">TOTAL</span>
+                            <span className="total-amount">$ {totalPrice}</span>
+                        </section>
                     </div>
-                </section>
-                <section className="total ">
-                    <span className="total-text">TOTAL</span>
-                    <span className="total-amount">$ 5,396</span>
-                </section>
-                <span className="no-items">No items in cart</span>
+                }
+
+                {cartItems.length === 0 && <span className="no-items">No items in cart</span>}
+
                 <a href="/checkout">
                     <div className="button-primary">
                         <p className="sub-title">checkout</p>
