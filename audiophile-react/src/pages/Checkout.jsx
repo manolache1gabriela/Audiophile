@@ -1,9 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ConfirmationModal from '../components/ConfirmationModal'
 import BackButton from '../components/BackButton'
+import CartItemCheckout from '../components/CartItemCheckout';
 
 export default function Checkout() {
     const [openModalConfirmation, setOpenModalConfirmation] = useState(false);
+    let [totalPrice, setTotalPrice] = useState(0);
+    let [calculatedVAT, setCalculatedVat] = useState(0);
+    const cart = JSON.parse(localStorage.getItem('cart') ?? '{}');
+    let inCheckoutItems = [];
+    for (const [productId, { quantity, price }] of Object.entries(cart)) {
+        inCheckoutItems.unshift(<CartItemCheckout productId={productId} key={productId} quantity={quantity} price={price} />)
+    }
+
+    useEffect(() => {
+        const newCart = JSON.parse(localStorage.getItem('cart') ?? '{}');
+        let values = Object.values(newCart);
+        setTotalPrice(values.reduce((acc, item) => acc + item.price, 50));
+        setCalculatedVat(parseInt(0.2 * totalPrice));
+        console.log(calculatedVAT)
+    })
+
+
+
+
+
 
     return (
         <div>
@@ -118,22 +139,13 @@ export default function Checkout() {
                 <div className="summary">
                     <h6 className="product-price">summary</h6>
                     <div className="cart-summary">
-                        <div className="cart-item">
-                            <div className="cart-product-img"></div>
-                            <div className="cart-product-info">
-                                <div className="cart-product-name">
-                                    <p className="product-name">XX99 MK II</p>
-                                    <p className="product-price">$ 2,999</p>
-                                </div>
-                                <span className="number-of-items">x1</span>
-                            </div>
-                        </div>
+                        {inCheckoutItems}
                     </div>
                     <div className="paying-summary">
                         <ul className="payment-parts">
                             <li className="payment-part">
                                 <p className="part-name">TOTAL</p>
-                                <span className="part-amount">$ 5,396</span>
+                                <span className="part-amount">$ {totalPrice - 50}</span>
                             </li>
                             <li className="payment-part">
                                 <p className="part-name">SHIPPING</p>
@@ -141,13 +153,13 @@ export default function Checkout() {
                             </li>
                             <li className="payment-part">
                                 <p className="part-name">VAT (INCLUDED)</p>
-                                <span className="part-amount">$ 1,079</span>
+                                <span className="part-amount">$ {calculatedVAT}</span>
                             </li>
                         </ul>
                         <ul className="payment-total">
                             <li className="total-sum">
                                 <p className="total-sum-name">GRAND TOTAL</p>
-                                <span className="total-amount">$ 5,446</span>
+                                <span className="total-amount">$ {totalPrice}</span>
                             </li>
                         </ul>
                     </div>

@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-export default function QuantityButton({ quantity, isPersistent, productId, innerRef, price, calculateTotal }) {
+export default function QuantityButton({ quantity, isPersistent, productId, innerRef, price, calculateTotal, removeItem }) {
     let [itemQuantity, setItemQuantity] = useState(quantity);
 
-    // Function to update the ref value when itemQuantity changes
     useEffect(() => {
         if (innerRef === undefined) {
             return
@@ -21,11 +20,20 @@ export default function QuantityButton({ quantity, isPersistent, productId, inne
             calculateTotal()
         }
     }
+    function deleteItem(productId) {
+        let cart = JSON.parse(localStorage.getItem('cart') ?? '{}');
+        delete cart[productId];
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
 
     function subtract(event) {
         event.preventDefault();
         event.stopPropagation();
         if (itemQuantity === 0) {
+            if (isPersistent) {
+                deleteItem(productId);
+                removeItem();
+            }
             return
         }
         modifyQuantity(itemQuantity--);
@@ -42,7 +50,6 @@ export default function QuantityButton({ quantity, isPersistent, productId, inne
         cart[productId] = { quantity: quantity, price: (price * quantity) };
         localStorage.setItem('cart', JSON.stringify(cart));
     }
-
 
     return (
         <div className="quantity">

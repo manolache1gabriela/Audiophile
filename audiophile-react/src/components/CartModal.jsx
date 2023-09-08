@@ -13,20 +13,28 @@ export default function CartModal({ setOpenModalCart }) {
     }
 
     useEffect(() => {
-        calculateTotal()
+        calculateTotal();
+        refreshCartItems(cart);
+    }, [setOpenModalCart])
 
+    function refreshCartItems(cart) {
         let newCartItems = []
         for (const [productId, { quantity }] of Object.entries(cart)) {
-            newCartItems.unshift(<CartItem quantity={quantity} productId={productId} key={'product-' + productId} calculateTotal={calculateTotal} />)
+            newCartItems.unshift(<CartItem quantity={quantity} productId={productId} key={productId} calculateTotal={calculateTotal} removeItem={removeItem} />)
         }
-
         setCartItems(newCartItems)
-    }, [setOpenModalCart])
+    }
 
     function removeAll() {
         localStorage.removeItem('cart');
         setCartItems([])
         calculateTotal()
+    }
+
+    function removeItem() {
+        const cart = JSON.parse(localStorage.getItem('cart') ?? '{}');
+        refreshCartItems(cart);
+        calculateTotal();
     }
 
     return (
@@ -45,7 +53,7 @@ export default function CartModal({ setOpenModalCart }) {
                 </section>
                 {
                     cartItems.length > 0 &&
-                    <div>
+                    <div className='cart-summary-total'>
                         <section className="cart-summary ">
                             {cartItems}
                         </section>

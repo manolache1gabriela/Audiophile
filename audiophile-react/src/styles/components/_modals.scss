@@ -194,7 +194,6 @@ body {
     }
 }
 
-
 #cart-modal {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     z-index: 2;
@@ -223,6 +222,10 @@ body {
         @include displayFlex-style;
         gap: 2rem;
 
+        .cart-summary-total {
+            @include displayFlex-style;
+            gap: 1rem
+        }
     }
 
     .items-number-remove {
@@ -231,7 +234,7 @@ body {
 
     .cart-summary {
         @include items-summary;
-        height: 8.5rem;
+        max-height: 8.5rem;
         display: $displayFlex;
         flex-direction: column;
         gap: 0.5rem;
@@ -276,7 +279,6 @@ body {
 .no-items {
     @include paragraph;
     font-size: 1.15rem;
-    // display: none;
 }
 
 .removed {
@@ -323,6 +325,9 @@ body {
 
         .favorite-summary {
             @include items-summary;
+            display: $displayFlex;
+            flex-direction: column;
+            gap: 0.5rem;
 
             .favorite-product-info {
                 display: $displayGrid;
@@ -333,6 +338,10 @@ body {
                 .cart-product-name {
                     display: $displayGrid;
                     grid-template-rows: 1fr 1fr;
+                    text-overflow: ellipsis;
+                    text-wrap: nowrap;
+                    max-width: 7rem;
+                    overflow: hidden;
 
                     .product-name {
                         @include paragraph;
