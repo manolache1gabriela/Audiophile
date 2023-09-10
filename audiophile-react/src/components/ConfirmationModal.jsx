@@ -1,11 +1,16 @@
-import React, { useEffect, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect, useRef, useState } from 'react'
 
-export default function ConfirmationModal() {
+export default function ConfirmationModal({ totalPrice, inCheckoutItems, key }) {
+    const [viewOthers, setViewOthers] = useState(false);
+
     let modal = useRef(null);
     useEffect(() => {
         modal.current?.scrollIntoView()
-    }, [modal])
+    }, [modal]);
+
+    const otherItemsBought = inCheckoutItems.slice(1, inCheckoutItems.length);
+
+
     return (
         <div className="modal-background on-confirmation-modal" ref={modal}>
             <div id="thanks-modal">
@@ -18,25 +23,22 @@ export default function ConfirmationModal() {
                     <section className="confirm-summary">
                         <div className="summary">
                             <div className="cart-items">
-                                <div className="cart-item">
-                                    <div className="cart-product-img"></div>
-                                    <div className="cart-product-info">
-                                        <div className="cart-product-name">
-                                            <p className="product-name">XX99 MK II</p>
-                                            <p className="product-price">$ 2,999</p>
-                                        </div>
-                                        <span className="number-of-items">x1</span>
-                                    </div>
-                                </div>
+                                {inCheckoutItems[0]}
+                                {viewOthers && <div>
+                                    {otherItemsBought}
+                                </div>}
                                 <div className="others-from-cart">
-                                    <button className="view-others">
-                                        <span className="view-text">and 2 other item(s)</span>
-                                    </button>
+                                    {!viewOthers && <button onClick={() => setViewOthers(true)} className="view-others">
+                                        <span className="view-text">and {otherItemsBought.length} other item(s)</span>
+                                    </button>}
+                                    {viewOthers && <button onClick={() => setViewOthers(false)} className="view-others">
+                                        <span className="view-text">View less</span>
+                                    </button>}
                                 </div>
                             </div>
                             <div className="grand-total">
                                 <span className="grand-title">GRAND TOTAL</span>
-                                <span className="grand-amount">$ 5,446</span>
+                                <span className="grand-amount">$ {totalPrice}</span>
                             </div>
                         </div>
                     </section>

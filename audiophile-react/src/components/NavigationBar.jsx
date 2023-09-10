@@ -47,12 +47,14 @@ export default function NavigationBar() {
                         </div>
                         <div className="favorite_cart">
                             <img onMouseEnter={() => {
+                                setOpenModalCart(false);
                                 setOpenModalFavorite(true);
                             }} onClick={() => {
                                 setOpenModalFavorite(!openModalFavorite);
                             }}
                                 id="favorite-icon" src='/assets/shared/desktop/heart-regular.svg' alt="favorite items" />
                             <img onMouseEnter={() => {
+                                setOpenModalFavorite(false);
                                 setOpenModalCart(true)
                             }} onClick={() => {
                                 setOpenModalCart(!openModalCart)

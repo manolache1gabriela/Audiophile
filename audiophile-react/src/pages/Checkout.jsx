@@ -18,13 +18,7 @@ export default function Checkout() {
         let values = Object.values(newCart);
         setTotalPrice(values.reduce((acc, item) => acc + item.price, 50));
         setCalculatedVat(parseInt(0.2 * totalPrice));
-        console.log(calculatedVAT)
-    })
-
-
-
-
-
+    }, [totalPrice])
 
     return (
         <div>
@@ -170,7 +164,7 @@ export default function Checkout() {
                 </div>
             </section>
 
-            {openModalConfirmation && <ConfirmationModal openModalConfirmation={openModalConfirmation} setOpenModalConfirmation={setOpenModalConfirmation} />}
+            {openModalConfirmation && <ConfirmationModal openModalConfirmation={openModalConfirmation} setOpenModalConfirmation={setOpenModalConfirmation} inCheckoutItems={inCheckoutItems} totalPrice={totalPrice} />}
         </div>
     )
 }

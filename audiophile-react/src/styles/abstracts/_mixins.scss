@@ -190,6 +190,10 @@
                 text-wrap: nowrap;
                 max-width: 7rem;
                 overflow: hidden;
+
+                @include devices(tablet) {
+                    max-width: unset;
+                }
             }
 
             .product-price {

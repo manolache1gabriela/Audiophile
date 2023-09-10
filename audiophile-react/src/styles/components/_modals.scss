@@ -27,11 +27,11 @@ body {
 
 #thanks-modal {
     height: fit-content;
-    max-width: 33.8rem;
     overflow-y: scroll;
+    width: 90%;
     border-radius: $borderRadius;
     border: 0;
-    padding: 2rem;
+    padding: 1.5rem;
     background-color: $colorWhiteBright;
     scrollbar-width: none;
 
@@ -77,11 +77,9 @@ body {
             width: 100%;
             display: $displayGrid;
             grid-template-rows: auto 1fr;
-            border-radius: $borderRadius;
 
             .summary {
                 width: 100%;
-
                 background-color: $colorWhiteGray;
                 display: $displayGrid;
                 grid-template-rows: auto 1fr;
@@ -94,7 +92,7 @@ body {
                     width: 100%;
                     max-height: 8.5rem;
                     overflow-y: scroll;
-                    padding: 1rem 3% 0;
+                    padding: 0.5rem 3% 0;
 
                     &::-webkit-scrollbar {
                         display: none;
@@ -124,31 +122,32 @@ body {
                         }
                     }
                 }
+
+                .grand-total {
+                    border-bottom-right-radius: $borderRadius;
+                    border-bottom-left-radius: $borderRadius;
+                    width: 100%;
+                    min-height: 6rem;
+                    display: $displayFlex;
+                    @include displayFlex-style;
+                    align-items: flex-start;
+                    padding: 0 3%;
+                    background-color: $colorBlackIntense;
+                    gap: 0.5rem;
+
+                    .grand-title {
+                        @include paragraph;
+                        color: $colorWhiteBright;
+                        opacity: 0.5;
+                    }
+
+                    .grand-amount {
+                        @include h6;
+                        color: $colorWhiteBright;
+                    }
+                }
             }
 
-            .grand-total {
-                border-bottom-right-radius: $borderRadius;
-                border-bottom-left-radius: $borderRadius;
-                width: 100%;
-                min-height: 6rem;
-                display: $displayFlex;
-                @include displayFlex-style;
-                align-items: flex-start;
-                padding: 0 3%;
-                background-color: $colorBlackIntense;
-                gap: 0.5rem;
-
-                .grand-title {
-                    @include paragraph;
-                    color: $colorWhiteBright;
-                    opacity: 0.5;
-                }
-
-                .grand-amount {
-                    @include h6;
-                    color: $colorWhiteBright;
-                }
-            }
         }
 
         .button-primary {
@@ -156,8 +155,44 @@ body {
         }
     }
 
+    @include devices(tablet) {
+        width: 70%;
+        max-width: unset;
+
+        .dialog-visual {
+
+            .confirm-summary {
+
+                .summary {
+                    grid-template-columns: auto 45%;
+                    grid-template-rows: unset;
+                    border-top-left-radius: $borderRadius;
+                    border-bottom-left-radius: $borderRadius;
+
+                    .cart-items {
+                        grid-column: 1/2;
+                        max-height: 16.5rem;
+                    }
+
+                    .grand-total {
+                        grid-column: 2/3;
+                        justify-content: flex-end;
+                        padding: 2.5rem 2rem;
+                        border-bottom-left-radius: unset;
+                        border-top-right-radius: $borderRadius;
+                    }
+                }
+
+            }
+        }
+    }
+
     @include devices(laptop) {
         width: 50%;
+    }
+
+    @include devices(desktop) {
+        width: 45%;
     }
 }
 
