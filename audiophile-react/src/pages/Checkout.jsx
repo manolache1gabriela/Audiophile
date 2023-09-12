@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ConfirmationModal from '../components/ConfirmationModal'
 import BackButton from '../components/BackButton'
 import CartItemCheckout from '../components/CartItemCheckout';
+import Validation from '../hooks/Validation';
 
 export default function Checkout() {
     const [openModalConfirmation, setOpenModalConfirmation] = useState(false);
@@ -21,247 +22,38 @@ export default function Checkout() {
         setCalculatedVat(parseInt(0.2 * totalPrice));
     }, [totalPrice])
 
-    const [canSubmit, setCanSubmit] = useState(true);
 
-    const [name, setName] = useState('');
-    const [wrongName, setWrongName] = useState(false);
-    const nameRgx = '[A-Z]{1}[a-z]+[ ][A-Z]{1}[a-z]+';
+    const [inputValues, setInputValues] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        address: '',
+        zip: '',
+        city: '',
+        country: '',
+        cardNumber: '',
+        cardPIN: ''
+    });
 
-    const getValueName = event => {
-        setName(event.target.value)
+    const [errors, setErrors] = useState({});
+
+    function handleInput(event) {
+        const newObj = { ...inputValues, [event.target.name]: event.target.value };
+        setInputValues(newObj);
     }
 
-    function checkName() {
-        if (!name.match(nameRgx)) {
-            setWrongName(true);
-            document.querySelector('.name-label').classList.add('form-label-wrong');
-            document.querySelector('#name').classList.add('error');
-            setCanSubmit(false);
+    function handleValidation(event) {
+        event.preventDefault();
+        setErrors(Validation(inputValues, payMethod));
+        if (Object.keys(errors).length === 0) {
+            setOpenModalConfirmation(false);
+            console.log(22)
         } else {
-            setWrongName(false);
-            document.querySelector('.name-label').classList.remove('form-label-wrong');
-            document.querySelector('#name').classList.remove('error');
+            setOpenModalConfirmation(true);
+            console.log(33)
         }
     }
-
-    const [email, setEmail] = useState('');
-    const [wrongEmail, setWrongEmail] = useState(false);
-    const emailRgx = '[a-zA-Z0-9]+@[a-z]+[.][a-z]{2,3}';
-
-    const getValueEmail = event => {
-        setEmail(event.target.value)
-    }
-
-    function checkEmail() {
-        if (!email.match(emailRgx)) {
-            setWrongEmail(true);
-            document.querySelector('.email-label').classList.add('form-label-wrong');
-            document.querySelector('#email').classList.add('error');
-            setCanSubmit(false);
-        } else {
-            setWrongEmail(false);
-            document.querySelector('.email-label').classList.remove('form-label-wrong');
-            document.querySelector('#email').classList.remove('error');
-        }
-    }
-
-    const [phone, setPhone] = useState('');
-    const [wrongPhone, setWrongPhone] = useState(false);
-    const phoneRgx = '[+][0-9]{1,2}[ ][0-9]{3}[-][0-9]{3}[-][0-9]{4}'
-
-    const getValuePhone = event => {
-        setPhone(event.target.value)
-    }
-
-    function checkPhone() {
-        if (!phone.match(phoneRgx)) {
-            setWrongPhone(true);
-            document.querySelector('.phone-label').classList.add('form-label-wrong');
-            document.querySelector('#phone').classList.add('error');
-            setCanSubmit(false);
-        } else {
-            setWrongPhone(false);
-            document.querySelector('.phone-label').classList.remove('form-label-wrong');
-            document.querySelector('#phone').classList.remove('error');
-        }
-    }
-    const [address, setAddress] = useState('');
-    const [wrongAddress, setWrongAddress] = useState(false);
-    const addressRgx = '[1-9]{1,4}[ ][A-Z]{1}[a-z]+[ ][A-Z]{1}[a-z]+';
-
-    const getValueAddress = event => {
-        setAddress(event.target.value)
-    }
-
-    function checkAddress() {
-        if (!address.match(addressRgx)) {
-            setWrongAddress(true);
-            document.querySelector('.address-label').classList.add('form-label-wrong');
-            document.querySelector('#address').classList.add('error');
-            setCanSubmit(false);
-        } else {
-            setWrongAddress(false);
-            document.querySelector('.address-label').classList.remove('form-label-wrong');
-            document.querySelector('#address').classList.remove('error');
-        }
-    }
-
-    const [ZIP, setZIP] = useState('');
-    const [wrongZIP, setWrongZIP] = useState(false);
-    const ZIPRgx = '^[0-9]{5}$';
-
-    const getValueZIP = event => {
-        setZIP(event.target.value)
-    }
-
-    function checkZIP() {
-        if (!ZIP.match(ZIPRgx)) {
-            setWrongZIP(true);
-            document.querySelector('.zip-label').classList.add('form-label-wrong');
-            document.querySelector('#zip-code').classList.add('error');
-            setCanSubmit(false);
-        } else {
-            setWrongZIP(false);
-            document.querySelector('.zip-label').classList.remove('form-label-wrong');
-            document.querySelector('#zip-code').classList.remove('error');
-        }
-    }
-
-    const [city, setCity] = useState('');
-    const [wrongCity, setWrongCity] = useState(false);
-    const cityRgx = '^[a-zA-Z]+(?:[[ ]-][a-zA-Z]+)*$';
-
-    const getValueCity = event => {
-        setCity(event.target.value)
-    }
-
-    function checkCity() {
-        if (!city.match(cityRgx)) {
-            setWrongCity(true);
-            document.querySelector('.city-label').classList.add('form-label-wrong');
-            document.querySelector('#city').classList.add('error');
-            setCanSubmit(false);
-        } else {
-            setWrongCity(false);
-            document.querySelector('.city-label').classList.remove('form-label-wrong');
-            document.querySelector('#city').classList.remove('error');
-        }
-    }
-
-    const [country, setCountry] = useState('');
-    const [wrongCountry, setWrongCountry] = useState(false);
-    const countryRgx = '[a-zA-Z]{2,}';
-
-    const getValueCountry = event => {
-        setCountry(event.target.value)
-    }
-
-    function checkCountry() {
-        if (!country.match(countryRgx)) {
-            setWrongCountry(true);
-            document.querySelector('.country-label').classList.add('form-label-wrong');
-            document.querySelector('#country').classList.add('error');
-            setCanSubmit(false);
-        } else {
-            setWrongCountry(false);
-            document.querySelector('.country-label').classList.remove('form-label-wrong');
-            document.querySelector('#country').classList.remove('error');
-        }
-    }
-
-    const [cardNumber, setCardNumber] = useState('');
-    const [wrongCardNumber, setWrongCardNumber] = useState(false);
-    const cardNumberRgx = '^[0-9]{9}';
-
-    const getValueCardNumber = event => {
-        setCardNumber(event.target.value)
-    }
-
-    function checkCardNumber() {
-        if (payMethod === true) {
-            if (!cardNumber.match(cardNumberRgx)) {
-                setWrongCardNumber(true);
-                document.querySelector('.card-number-label').classList.add('form-label-wrong');
-                document.querySelector('#card-number').classList.add('error');
-                setCanSubmit(false);
-            } else {
-                setWrongCardNumber(false);
-                document.querySelector('.card-number-label').classList.remove('form-label-wrong');
-                document.querySelector('#card-number').classList.remove('error');
-                // setCanSubmit(true);
-            }
-        }
-    }
-
-    const [cardPIN, setCardPIN] = useState('');
-    const [wrongCardPIN, setWrongCardPIN] = useState(false);
-    const cardPINRgx = '^[0-9]{4}$';
-
-    const getValueCardPIN = event => {
-        setCardPIN(event.target.value)
-    }
-
-    function checkCardPIN() {
-        if (payMethod === true) {
-            if (!cardPIN.match(cardPINRgx)) {
-                setWrongCardPIN(true);
-                document.querySelector('.card-pin-label').classList.add('form-label-wrong');
-                document.querySelector('#card-pin').classList.add('error');
-                setCanSubmit(false);
-            } else {
-                setWrongCardPIN(false);
-                document.querySelector('.card-pin-label').classList.remove('form-label-wrong');
-                document.querySelector('#card-pin').classList.remove('error');
-                // setCanSubmit(true);
-            }
-        }
-    }
-
-
-
-
-    function checkValidity() {
-        checkName();
-        checkEmail();
-        checkPhone();
-        checkAddress();
-        checkZIP();
-        checkCity();
-        checkCountry();
-        checkCardNumber();
-        checkCardPIN();
-    }
-
-    // function handleSubmit() {
-    //     checkValidity();
-    //     if (canSubmit === true) {
-    //         setOpenModalConfirmation(true);s
-    //     }
-    // }
-    function handleSubmit() {
-
-        checkValidity();
-        if (payMethod) {
-            console.log('hehheeeee')
-            if (!wrongName && !wrongEmail && !wrongPhone && !wrongAddress && !wrongZIP && !wrongCity && !wrongCountry && !wrongCardNumber && !wrongCardPIN) {
-                setOpenModalConfirmation(true)
-            }
-        }
-    }
-    // function handleSubmit() {
-    //     if (canSubmit) {
-    //         setOpenModalConfirmation(true)
-    //     } else {
-    //         setOpenModalConfirmation(false)
-    //     }
-    // }
-
-    // function handleSubmit() {
-    //     checkValidity();
-    //     if (!wrongName && !wrongEmail && !wrongPhone && !wrongAddress && !wrongZIP && !wrongCity && !wrongCountry) {
-    //         setOpenModalConfirmation(true);
-    //     }
-    // }
+    // console.log(Object.keys(errors).length)
 
 
     return (
@@ -278,23 +70,23 @@ export default function Checkout() {
                             <div className="form-input">
                                 <div className="label-and-error">
                                     <label className="form-label name-label" htmlFor="name">Name</label>
-                                    {wrongName && <span className="error-text">Wrong format</span>}
+                                    {errors.name && <span className="error-text">{errors.name}</span>}
                                 </div>
-                                <input onChange={getValueName} className="inputs" type="text" required name="name" id="name" placeholder="Alexei Ward" value={name} />
+                                <input onChange={handleInput} className="inputs" type="text" required name="name" id="name" placeholder="Alexei Ward" />
                             </div>
                             <div className="form-input">
                                 <div className="label-and-error">
                                     <label className="form-label email-label" htmlFor="email">Email Address</label>
-                                    {wrongEmail && <span className="error-text">Wrong format</span>}
+                                    {errors.email && <span className="error-text">{errors.email}</span>}
                                 </div>
-                                <input onChange={getValueEmail} className="inputs" type="email" required name="email" id="email" value={email} placeholder="alexei@mail.com" />
+                                <input onChange={handleInput} className="inputs" type="email" required name="email" id="email" placeholder="alexei@mail.com" />
                             </div>
                             <div className="form-input">
                                 <div className="label-and-error">
                                     <label className="form-label phone-label" htmlFor="phone">Phone Number</label>
-                                    {wrongPhone && <span className="error-text">Wrong format</span>}
+                                    {errors.phone && <span className="error-text">{errors.phone}</span>}
                                 </div>
-                                <input onChange={getValuePhone} className="inputs" type="tel" required name="phone" id="phone" value={phone} placeholder="+1 202-555-0136" />
+                                <input onChange={handleInput} className="inputs" type="tel" required name="phone" id="phone" placeholder="+1 202-555-0136" />
                             </div>
                         </form>
                     </div>
@@ -304,30 +96,30 @@ export default function Checkout() {
                             <div className="form-input address">
                                 <div className="label-and-error">
                                     <label className="form-label address-label" htmlFor="address">Your Address</label>
-                                    {wrongAddress && <span className="error-text">Wrong format</span>}
+                                    {errors.address && <span className="error-text">{errors.address}</span>}
                                 </div>
-                                <input onChange={getValueAddress} className="inputs" type="text" required name="address" value={address} id="address" placeholder="1137 Williams Avenue" />
+                                <input onChange={handleInput} className="inputs" type="text" required name="address" id="address" placeholder="1137 Williams Avenue" />
                             </div>
                             <div className="form-input">
                                 <div className="label-and-error">
                                     <label className="form-label zip-label" htmlFor="zip-code">ZIP Code</label>
-                                    {wrongZIP && <span className="error-text">Wrong format</span>}
+                                    {errors.zip && <span className="error-text">{errors.zip}</span>}
                                 </div>
-                                <input onChange={getValueZIP} value={ZIP} className="inputs" type="text" required name="zip-code" id="zip-code" placeholder="10001" />
+                                <input onChange={handleInput} className="inputs" type="text" required name="zip" id="zip-code" placeholder="10001" />
                             </div>
                             <div className="form-input">
                                 <div className="label-and-error">
                                     <label className="form-label city-label" htmlFor="city">City</label>
-                                    {wrongCity && <span className="error-text">Wrong format</span>}
+                                    {errors.city && <span className="error-text">{errors.city}</span>}
                                 </div>
-                                <input onChange={getValueCity} value={city} className="inputs" type="text" required name="city" id="city" placeholder="New York" />
+                                <input onChange={handleInput} className="inputs" type="text" required name="city" id="city" placeholder="New York" />
                             </div>
                             <div className="form-input">
                                 <div className="label-and-error">
                                     <label className="form-label country-label" htmlFor="country">Country</label>
-                                    {wrongCountry && <span className="error-text">Wrong format</span>}
+                                    {errors.country && <span className="error-text">{errors.country}</span>}
                                 </div>
-                                <input onChange={getValueCountry} value={country} className="inputs" type="text" required name="country" id="country" placeholder="United States" />
+                                <input onChange={handleInput} className="inputs" type="text" required name="country" id="country" placeholder="United States" />
                             </div>
                         </form>
                     </div>
@@ -356,16 +148,16 @@ export default function Checkout() {
                                     <div className="form-inputs-e-money">
                                         <div className="label-and-error">
                                             <label className="form-label card-number-label" htmlFor="card-number">e-Money Number</label>
-                                            {wrongCardNumber && <span className="error-text">Wrong format</span>}
+                                            {errors.cardNumber && <span className="error-text">{errors.cardNumber}</span>}
                                         </div>
-                                        <input onChange={getValueCardNumber} value={cardNumber} className="inputs" type="text" required name="card-number" id="card-number" placeholder="238521993" />
+                                        <input onChange={handleInput} className="inputs" type="text" required name="cardNumber" id="card-number" placeholder="238521993" />
                                     </div>
                                     <div className="form-inputs-e-money">
                                         <div className="label-and-error">
-                                            <label className="form-label card-pin-label" htmlFor="card-pin">e-Money PIN</label>
-                                            {wrongCardPIN && <span className="error-text">Wrong format</span>}
+                                            <label className="form-label card-pin-label" htmlFor="cardPin">e-Money PIN</label>
+                                            {errors.cardPin && <span className="error-text">{errors.cardPin}t</span>}
                                         </div>
-                                        <input onChange={getValueCardPIN} value={cardPIN} className="inputs" type="text" required name="card-pin" id="card-pin" placeholder="6891" />
+                                        <input onChange={handleInput} className="inputs" type="text" required name="card-pin" id="card-pin" placeholder="6891" />
                                     </div>
                                 </div>
                             }
@@ -406,7 +198,7 @@ export default function Checkout() {
                             </li>
                         </ul>
                     </div>
-                    <input onClick={handleSubmit} className="button-primary submit-btn" type="submit" value="CONTINUE & PAY" />
+                    <input onClick={handleValidation} className="button-primary submit-btn" type="submit" value="CONTINUE & PAY" />
                 </div>
             </section>
 
