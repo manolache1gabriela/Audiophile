@@ -10,7 +10,7 @@
 
     .error-text {
         @include wrong;
-        display: none;
+        line-height: normal;
     }
 
     .checkout {
@@ -60,7 +60,6 @@
                 display: $displayFlex;
                 @include displayFlex-style;
                 gap: 0.5rem;
-                display: none;
             }
 
             .e-money-chose {
@@ -97,7 +96,7 @@
                         height: 3.5rem;
                         border: 0.0625rem solid #CFCFCF;
                         border-radius: $borderRadius;
-                        padding: 1rem;
+                        padding: 0 0 0 1rem;
 
                     }
 
@@ -120,8 +119,19 @@
                         height: 3.5rem;
                         border: 0.0625rem solid #CFCFCF;
                         border-radius: $borderRadius;
-                        padding: 1rem;
+                        padding: 0 0 0 1rem;
                     }
+                }
+            }
+
+            .card-info-container {
+                width: 100%;
+                @include displayFlex-style;
+                gap: 1rem;
+
+                @include devices(tablet) {
+                    flex-direction: row;
+                    justify-content: space-between;
                 }
             }
 
@@ -130,7 +140,6 @@
                 @include displayFlex-style;
                 gap: 1rem;
                 padding: 2rem 0 0;
-                display: none;
 
                 .cash-on-delivery-info {
                     opacity: 0.5;
@@ -268,12 +277,13 @@
                 }
 
                 .address {
-                    width: 98%;
+                    width: 99%;
                 }
 
                 .payment-form {
                     width: 100%;
                     flex-direction: row;
+                    gap: 1.6rem;
 
                     .form-label {
                         width: 100%;

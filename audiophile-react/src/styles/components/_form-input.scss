@@ -43,15 +43,16 @@ input[type="radio"] {
             color: #CD2C2C;
         }
 
-        .error-text {
-            display: block;
-        }
     }
 
     .inputs {
         border: 0.0625rem solid #CD2C2C;
     }
 
+}
+
+.form-label-wrong {
+    color: #CD2C2C;
 }
 
 .error {

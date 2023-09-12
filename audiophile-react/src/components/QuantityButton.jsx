@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function QuantityButton({ quantity, isPersistent, productId, innerRef, price, calculateTotal, removeItem }) {
     let [itemQuantity, setItemQuantity] = useState(quantity);
