@@ -35,24 +35,41 @@ export default function Checkout() {
         cardPIN: ''
     });
 
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState({
+        name: ' ',
+        email: ' ',
+        phone: ' ',
+        address: ' ',
+        zip: ' ',
+        city: ' ',
+        country: ' ',
+        cardNumber: ' ',
+        cardPIN: ' '
+    });
 
     function handleInput(event) {
         const newObj = { ...inputValues, [event.target.name]: event.target.value };
         setInputValues(newObj);
     }
 
+
     function handleValidation(event) {
         event.preventDefault();
-        setErrors(Validation(inputValues, payMethod));
-        if (Object.keys(errors).length === 0) {
-            setOpenModalConfirmation(false);
-            console.log(22)
-        } else {
-            setOpenModalConfirmation(true);
-            console.log(33)
+        let err = { ...Validation(inputValues, payMethod) };
+        setErrors(err);
+        console.log(errors, inputValues)
+        if (Object.values(errors).reduce((acc, value) => acc && (value === ''), true)) {
+            openModal();
         }
     }
+    function openModal() {
+        setOpenModalConfirmation(true);
+        document.querySelector('body').classList.add('body-overflow')
+    }
+
+
+
+
     // console.log(Object.keys(errors).length)
 
 
@@ -98,7 +115,7 @@ export default function Checkout() {
                                     <label className="form-label address-label" htmlFor="address">Your Address</label>
                                     {errors.address && <span className="error-text">{errors.address}</span>}
                                 </div>
-                                <input onChange={handleInput} className="inputs" type="text" required name="address" id="address" placeholder="1137 Williams Avenue" />
+                                <input onChange={handleInput} className="inputs" type="text" required name="address" pattern='/[1-9]{1,4} [A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+/' id="address" placeholder="1137 Williams Avenue" />
                             </div>
                             <div className="form-input">
                                 <div className="label-and-error">
@@ -157,7 +174,7 @@ export default function Checkout() {
                                             <label className="form-label card-pin-label" htmlFor="cardPin">e-Money PIN</label>
                                             {errors.cardPin && <span className="error-text">{errors.cardPin}t</span>}
                                         </div>
-                                        <input onChange={handleInput} className="inputs" type="text" required name="card-pin" id="card-pin" placeholder="6891" />
+                                        <input onChange={handleInput} className="inputs" type="text" required name="cardPin" pattern='[0-9]{4}' id="card-pin" placeholder="6891" />
                                     </div>
                                 </div>
                             }
