@@ -29,7 +29,6 @@ export default function Checkout() {
         };
     }, [totalPrice])
 
-
     const [inputValues, setInputValues] = useState({
         name: '',
         email: '',
@@ -59,7 +58,6 @@ export default function Checkout() {
         setInputValues(newObj);
     }
 
-
     function handleValidation(event) {
         event.preventDefault();
         let err = { ...Validation(inputValues, payMethod) };
@@ -72,12 +70,6 @@ export default function Checkout() {
         setOpenModalConfirmation(true);
         document.querySelector('body').classList.add('body-overflow')
     }
-
-
-
-
-    // console.log(Object.keys(errors).length)
-
 
     return (
         <div>

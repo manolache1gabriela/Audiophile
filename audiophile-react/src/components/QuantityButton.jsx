@@ -26,9 +26,8 @@ export default function QuantityButton({ quantity, isPersistent, productId, inne
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 
-    function subtract(event) {
-        event.preventDefault();
-        event.stopPropagation();
+    function subtract() {
+        const newQuantity = itemQuantity - 1;
         if (itemQuantity === 0) {
             if (isPersistent) {
                 deleteItem(productId);
@@ -36,13 +35,12 @@ export default function QuantityButton({ quantity, isPersistent, productId, inne
             }
             return
         }
-        modifyQuantity(itemQuantity--);
+        modifyQuantity(newQuantity);
     }
 
-    function add(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        modifyQuantity(itemQuantity++);
+    function add() {
+        const newQuantity = itemQuantity + 1;
+        modifyQuantity(newQuantity);
     }
 
     function saveToLocalStorage(productId, quantity) {
