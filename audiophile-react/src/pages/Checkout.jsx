@@ -7,8 +7,9 @@ import Validation from '../hooks/Validation';
 export default function Checkout() {
     const [openModalConfirmation, setOpenModalConfirmation] = useState(false);
     const [payMethod, setPayMethod] = useState(true);
-    let [totalPrice, setTotalPrice] = useState(0);
-    let [calculatedVAT, setCalculatedVat] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [calculatedVAT, setCalculatedVat] = useState(0);
+    const [shipping, setShipping] = useState(0);
     const cart = JSON.parse(localStorage.getItem('cart') ?? '{}');
     let inCheckoutItems = [];
     for (const [productId, { quantity, price }] of Object.entries(cart)) {
@@ -18,8 +19,14 @@ export default function Checkout() {
     useEffect(() => {
         const newCart = JSON.parse(localStorage.getItem('cart') ?? '{}');
         let values = Object.values(newCart);
-        setTotalPrice(values.reduce((acc, item) => acc + item.price, 50));
-        setCalculatedVat(parseInt(0.2 * totalPrice));
+        setTotalPrice(values.reduce((acc, item) => acc + item.price, shipping));
+        if (totalPrice > 0) {
+            setCalculatedVat(parseInt(0.2 * totalPrice));
+            setShipping(50);
+        } else {
+            setCalculatedVat(0);
+            setShipping(0);
+        };
     }, [totalPrice])
 
 
@@ -57,7 +64,6 @@ export default function Checkout() {
         event.preventDefault();
         let err = { ...Validation(inputValues, payMethod) };
         setErrors(err);
-        console.log(errors, inputValues)
         if (Object.values(errors).reduce((acc, value) => acc && (value === ''), true)) {
             openModal();
         }
@@ -197,11 +203,11 @@ export default function Checkout() {
                         <ul className="payment-parts">
                             <li className="payment-part">
                                 <p className="part-name">TOTAL</p>
-                                <span className="part-amount">$ {totalPrice - 50}</span>
+                                <span className="part-amount">$ {totalPrice - shipping}</span>
                             </li>
                             <li className="payment-part">
                                 <p className="part-name">SHIPPING</p>
-                                <span className="part-amount">$ 50</span>
+                                <span className="part-amount">$ {shipping}</span>
                             </li>
                             <li className="payment-part">
                                 <p className="part-name">VAT (INCLUDED)</p>
