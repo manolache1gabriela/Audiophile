@@ -7,7 +7,7 @@ export default function ProductOfType({ product }) {
         <div className="product-of-type">
             <div className="product-image" style={{ backgroundImage: `url(${product.categoryImage.desktop})` }}></div>
             <div className="product-info">
-                {product.new && <p className="overline">NEW PRODUCT</p>}
+                {product.new && <p className="overline">NEW</p>}
                 <h2 className="product-title">
                     {product.name}
                 </h2>
