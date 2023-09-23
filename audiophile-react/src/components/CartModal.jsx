@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CartItem from './CartItem';
 
-export default function CartModal({ setOpenModalCart }) {
+export default function CartModal({ openModalCart, setOpenModalCart }) {
 
     const cart = JSON.parse(localStorage.getItem('cart') ?? '{}');
     let [cartItems, setCartItems] = useState([])
@@ -15,7 +15,7 @@ export default function CartModal({ setOpenModalCart }) {
     useEffect(() => {
         calculateTotal();
         refreshCartItems(cart);
-    }, [setOpenModalCart])
+    }, [openModalCart, cart])
 
     function refreshCartItems(cart) {
         let newCartItems = []
